@@ -26,10 +26,17 @@
         "image2": "shopify://shop_images/461887735_1588289075428484_5573720972952366065_n_1.jpg",
         "product_1": "prouduct-one"
       }
+    },
+    "sticky_logo_Q3Jffm": {
+      "type": "sticky-Logo",
+      "settings": {
+        "image1": "shopify://shop_images/logosss.png"
+      }
     }
   },
   "order": [
     "collection_block_mn3pF8",
+    "sticky_logo_Q3Jffm",
     "product_display_EXdn6f"
   ]
 }
