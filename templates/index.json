@@ -9,6 +9,12 @@
  */
 {
   "sections": {
+    "sticky_logo_KqE8rb": {
+      "type": "sticky-Logo",
+      "settings": {
+        "image1": "shopify://shop_images/logosss.png"
+      }
+    },
     "collection_block_mn3pF8": {
       "type": "collection-block",
       "settings": {
@@ -39,6 +45,7 @@
     }
   },
   "order": [
+    "sticky_logo_KqE8rb",
     "collection_block_mn3pF8",
     "product_display_EXdn6f",
     "product_display_nLXYwx"
