@@ -18,9 +18,21 @@
         "title": "",
         "color": ""
       }
+    },
+    "image_and_text_46tpEa": {
+      "type": "image-and-text",
+      "settings": {
+        "image": "shopify://shop_images/461286682_1082810543427482_2677143624051536350_n_1.jpg",
+        "title": "Title Text",
+        "body": "Body text content",
+        "product_1": "prouduct-one",
+        "cta": "",
+        "color": ""
+      }
     }
   },
   "order": [
-    "collection_block_mn3pF8"
+    "collection_block_mn3pF8",
+    "image_and_text_46tpEa"
   ]
 }
