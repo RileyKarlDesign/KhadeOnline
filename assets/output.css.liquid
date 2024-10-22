@@ -628,6 +628,11 @@ video {
   inset: 0px;
 }
 
+.inset-x-0 {
+  left: 0px;
+  right: 0px;
+}
+
 .bottom-0 {
   bottom: 0px;
 }
@@ -1031,10 +1036,6 @@ video {
 
 .h-8 {
   height: 2rem;
-}
-
-.h-\[20px\] {
-  height: 20px;
 }
 
 .h-\[2px\] {
@@ -1580,15 +1581,6 @@ video {
   border-color: rgb(59 130 246 / var(--tw-border-opacity));
 }
 
-.border-c1 {
-  --tw-border-opacity: 1;
-  border-color: rgb(236 236 236 / var(--tw-border-opacity));
-}
-
-.border-c2 {
-  border-color: #cccccce8;
-}
-
 .border-green-500 {
   --tw-border-opacity: 1;
   border-color: rgb(34 197 94 / var(--tw-border-opacity));
@@ -1642,25 +1634,6 @@ video {
 .bg-blue-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(30 64 175 / var(--tw-bg-opacity));
-}
-
-.bg-c1 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(236 236 236 / var(--tw-bg-opacity));
-}
-
-.bg-c2 {
-  background-color: #cccccce8;
-}
-
-.bg-c3 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(35 35 35 / var(--tw-bg-opacity));
-}
-
-.bg-c4 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 213 1 / var(--tw-bg-opacity));
 }
 
 .bg-gray-200 {
@@ -2256,10 +2229,6 @@ video {
   padding-top: 18vh;
 }
 
-.pt-\[20vw\] {
-  padding-top: 20vw;
-}
-
 .pt-\[40vh\] {
   padding-top: 40vh;
 }
@@ -2420,11 +2389,6 @@ video {
 .text-blue-500 {
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity));
-}
-
-.text-c1 {
-  --tw-text-opacity: 1;
-  color: rgb(236 236 236 / var(--tw-text-opacity));
 }
 
 .text-gray-600 {
@@ -2704,7 +2668,7 @@ video {
 @font-face {
   font-family: Press;
 
-  src: url(./GT-Pressura-Mono-Text-Trial.woff);
+  src: url(./GT-Pressura-Mono-Text-Trial.woff2);
 }
 
 :root {
@@ -2719,65 +2683,27 @@ video {
 
 h1 , h2 {
   font-family: 'SangBlu', serif ;
-  text-transform: uppercase;
   line-height: 2rem;
   font-size: 2rem;
   letter-spacing: -3px;
 }
 
-h3, button, input, a , p, span {
-  line-height: 1rem ;
-  font-size: 1rem ;
+h3, button, input , p, span {
+  line-height: 0.8rem ;
+  font-size: 0.8rem ;
   font-family: 'Press', Times, serif  !important;
-  text-transform: uppercase ;
 }
 
 input{
   outline: none !important;
 }
 
-.text-serif, h2{
-  font-family: 'joy',serif ;
-  text-transform: uppercase;
-  line-height: 4vw ;
-  font-size: 2vw ;
-  letter-spacing: -0.1vw;
-}
-
-.display-serif{
-  font-family: 'joy',serif !important;
-  text-transform: uppercase;
-  line-height: 8vw !important;
-  font-size: 4vw !important;
-  letter-spacing: -0.1vw;
-}
-
 @media (max-width: 767px) {
   h1{
-    font-family: 'joy', serif ;
-    text-transform: uppercase;
+    font-family: 'SangBlu', serif ;
     line-height: 4.8rem;
     font-size: 2.3rem;
     letter-spacing: -3px;
-  }
-
-  .text-serif, h2{
-    font-family: 'joy',serif ;
-    text-transform: uppercase;
-    line-height: 2em ;
-    font-size: 1.4em ;
-    letter-spacing: -1px;
-  }
-
-  .text-serif{
-    font-size: 1.5rem !important;
-    line-height: 2.5rem !important;
-    color: blue !important;
-  }
-
-  .display-serif{
-    font-size: 2rem !important;
-    line-height: 4rem !important;
   }
 }
 
@@ -3290,24 +3216,12 @@ canvas[resize] {
 }
 
 @media (min-width: 768px) {
-  .md\:visible {
-    visibility: visible;
-  }
-
-  .md\:fixed {
-    position: fixed;
-  }
-
   .md\:right-\[20px\] {
     right: 20px;
   }
 
   .md\:top-\[20px\] {
     top: 20px;
-  }
-
-  .md\:z-50 {
-    z-index: 50;
   }
 
   .md\:col-span-3 {
@@ -3320,10 +3234,6 @@ canvas[resize] {
 
   .md\:row-start-1 {
     grid-row-start: 1;
-  }
-
-  .md\:mt-0 {
-    margin-top: 0px;
   }
 
   .md\:block {
@@ -3350,10 +3260,6 @@ canvas[resize] {
     height: 200px;
   }
 
-  .md\:h-\[90vh\] {
-    height: 90vh;
-  }
-
   .md\:h-fit {
     height: -moz-fit-content;
     height: fit-content;
@@ -3365,14 +3271,6 @@ canvas[resize] {
 
   .md\:w-1\/2 {
     width: 50%;
-  }
-
-  .md\:w-\[18vw\] {
-    width: 18vw;
-  }
-
-  .md\:w-\[20vw\] {
-    width: 20vw;
   }
 
   .md\:w-\[30\%\] {
@@ -3415,10 +3313,6 @@ canvas[resize] {
     flex-direction: column;
   }
 
-  .md\:items-start {
-    align-items: flex-start;
-  }
-
   .md\:gap-2 {
     gap: 25px;
   }
@@ -3433,6 +3327,10 @@ canvas[resize] {
 
   .md\:p-1 {
     padding: 15px;
+  }
+
+  .md\:p-2 {
+    padding: 25px;
   }
 
   .md\:p-4 {
@@ -3463,10 +3361,6 @@ canvas[resize] {
     padding-right: 10px;
   }
 
-  .md\:pt-0 {
-    padding-top: 0px;
-  }
-
   .md\:pt-14 {
     padding-top: 3.5rem;
   }
@@ -3494,22 +3388,8 @@ canvas[resize] {
 }
 
 @media (min-width: 1024px) {
-  .lg\:w-\[16vw\] {
-    width: 16vw;
-  }
-
-  .lg\:w-\[22vw\] {
-    width: 22vw;
-  }
-
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 1280px) {
-  .xl\:w-\[27vh\] {
-    width: 27vh;
   }
 }
 

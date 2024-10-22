@@ -17,11 +17,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        c1: "#ececec",
-        c2: "#cccccce8",
-        c3: "#232323",
-        c4: "#ffd501",
-        test: "#cdb574",
+        surface1: "#FBF9F5",
+        type1: "#403128",
+        type2: "#403128",
+        stroke1: "#796A59",
+        test: "#ffb300",
       },
 
       width: {

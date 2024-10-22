@@ -1,5 +1,5 @@
-<div class="js-footer flex flex-col items-center ">
-  <div class="flex flex-col md:flex-row md:gap-4 w-full justify-between gap-2 ">
+<div class="js-footer flex flex-col items-center p-2 ">
+  <div class="flex flex-col md:gap-2 w-full justify-between gap-2 ">
     <div class="adress  ">
       <div class=" adress-info bottom h-fit w-full">
         <h3>
@@ -16,8 +16,8 @@
     </div>
 
     <div class="info w-1/2">
-      <div class=" flex gap-2  md:flex-row  flex-col  ">
-        <div class=" main-links w-full text-md menu-link font-sans    items-end gap-2">
+      <div class=" flex gap-2  flex-col  ">
+        <div class=" main-links w-full text-md menu-link font-sans items-end gap-2">
           {% for link in linklists.footer.links %}
             <h3 class="">
               <a href="{{ link.url }}">{{ link.title }}</a>
@@ -25,11 +25,10 @@
           {% endfor %}
         </div>
 
-        <div class="w-full">{% render 'newsletter' %}</div>
-
         <div class=" social-links bottom h-fit w-full">
           <h3><a href=""> Instagram </a></h3>
           <h3>Twitter</h3>
+          <h3>Spoitfy</h3>
         </div>
       </div>
     </div>
