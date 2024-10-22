@@ -1,23 +1,35 @@
 <div
+<<<<<<< HEAD
   style="background:{{section.settings.color}}"
   class=" js-section relative grid grid-flow-dense md:h-[140vh]  h-fit bg-opacity-50 md:grid-cols-2 grid-cols-1  "
 >
   <div class="w-full {% if section.setting.reverse %} col-start-1 {% else %} col-start-2 {% endif %}  ">
+=======
+  class=" js-section relative flex {% if section.settings.reverse %} flex-row-reverse  {% endif %}  flex-row  h-[140vh]   bg-opacity-50   "
+>
+  <div class="w-full ">
+>>>>>>> ffbea97 (add)
     <div class=" SMALL IMAGE md:h-[90vh] h-full  md:pt-2 p-2   pt-0  flex items-center justify-center sticky top-0 ">
       <div class="w-80  overflow-hidden md:p-[0px] md:pr-4  p-2">
         {{ section.settings.image2 | image_url: width: 1204 | image_tag: class: ' object-cover  js-fade' }}
       </div>
 
       {% if section.settings.product_1 != '' %}
-        <div class="absolute bottom-2 left-2 ">
+        <div class="absolute bottom-4 left-2 ">
           <p>{{ section.settings.product_1.title }}</p>
           <p>{{ section.settings.product_1.price | money }}</p>
         </div>
       {% endif %}
     </div>
   </div>
+<<<<<<< HEAD
   <div class="w-full h-full  overflow-hidden md:p-[0px] p-0 {% if section.setting.reverse %} col-start-2 {% else %} col-start-1 {% endif %} ">
     {{ section.settings.image1 | image_url: width: 1204 | image_tag: class: ' object-cover  js-fade' }}
+=======
+
+  <div class="w-full h-full p-0   ">
+    {{ section.settings.image1 | image_url: width: 1204 | image_tag: class: ' h-full   js-fade' }}
+>>>>>>> ffbea97 (add)
   </div>
 </div>
 
