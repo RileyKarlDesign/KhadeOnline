@@ -19,12 +19,6 @@
         "color": ""
       }
     },
-    "sticky_logo_Q3Jffm": {
-      "type": "sticky-Logo",
-      "settings": {
-        "image1": "shopify://shop_images/logosss.png"
-      }
-    },
     "product_display_EXdn6f": {
       "type": "product-display",
       "settings": {
@@ -46,7 +40,6 @@
   },
   "order": [
     "collection_block_mn3pF8",
-    "sticky_logo_Q3Jffm",
     "product_display_EXdn6f",
     "product_display_nLXYwx"
   ]
