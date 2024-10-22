@@ -5,12 +5,32 @@
 const swiper = new Swiper('.product-swiper', {
     // Optional parameters
   
-    slidesPerView: 'auto',
-    centeredSlides: false,
-    roundLengths: true,
-    loop: true,
+    slidesPerView: auto,
+    // centeredSlides: true,
+    // roundLengths: true,
+    // loop: true,
     mousewheel: true,
-    spaceBetween: 0, 
-    slideToClickedSlide: true,
+    // spaceBetween: 0, 
+    // slideToClickedSlide: false,
 
-  });
+    direction: 'vertical',
+    loop: false,
+
+    // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+
+
+  }); 
