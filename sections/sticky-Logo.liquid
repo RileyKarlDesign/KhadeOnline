@@ -1,0 +1,27 @@
+<div
+  class=" js-section relative  h-[50vh] flex items-center justify-center "
+>
+  <div class="w-80  overflow-hidden md:p-[0px] p-0">
+    {{ section.settings.image1 | image_url: width: 1204 | image_tag: class: '' }}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Sticky Logo",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image1",
+      "label": "Logo"
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "Sticky Logo",
+      "category": "Content"
+    }
+  ]
+}
+{% endschema %}
