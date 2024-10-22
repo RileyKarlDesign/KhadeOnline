@@ -1,8 +1,8 @@
 <div
-  class=" js-section relative  h-[50vh] flex items-center justify-center "
+  class=" js-section  h-[50vh] sticky top-0   "
 >
-  <div class="w-80  overflow-hidden md:p-[0px] p-0">
-    {{ section.settings.image1 | image_url: width: 1204 | image_tag: class: '' }}
+  <div class=" w-full overflow-hidden  h-[100vh]  md:p-[0px] p-0 flex items-center justify-center ">
+    {{ section.settings.image1 | image_url: width: 1204 | image_tag: class: 'w-80 ' }}
   </div>
 </div>
 
