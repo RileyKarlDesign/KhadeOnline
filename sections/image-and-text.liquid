@@ -4,9 +4,10 @@
 >
   <div class="w-full md:row-start-1  row-start-2  ">
     <div class="h-full md:p-4 md:pt-2 p-2   pt-0 ">
-      <div class="h-fit pb-2">
-        <h1 class="  md:w-[80%] w-full  uppercase    ">{{ section.settings.title }}</h1>
+      <div class="w-80 h-80 overflow-hidden md:p-[0px] md:pr-4  p-2">
+        {{ section.settings.image2 | image_url: width: 1204 | image_tag: class: ' object-cover  js-fade' }}
       </div>
+
       <h3 class="md:w-[350px]   ">
         {{ section.settings.body }}
       </h3>
@@ -19,7 +20,7 @@
     </div>
   </div>
   <div class="w-full h-full overflow-hidden md:p-[0px] md:pr-4  p-2">
-    {{ section.settings.image | image_url: width: 1204 | image_tag: class: ' object-cover  js-fade' }}
+    {{ section.settings.image1 | image_url: width: 1204 | image_tag: class: ' object-cover  js-fade' }}
   </div>
 </div>
 
@@ -29,8 +30,14 @@
   "settings": [
     {
       "type": "image_picker",
-      "id": "image",
-      "label": "Image One"
+      "id": "image1",
+      "label": "Large Image"
+    },
+
+    {
+      "type": "image_picker",
+      "id": "image2",
+      "label": "Small Image"
     },
 
     {
