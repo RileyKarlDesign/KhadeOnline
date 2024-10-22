@@ -1,16 +1,18 @@
 <div class="js-menu fixed top-0 right-0 left-0 bottom-0 z-40 transition-all    ">
-  <div class="menu-top absolute md:top-[20px]  top-0  md:right-[20px] pointer-events-auto  md:h-fit bottom-0  rounded-lg md:pt-[1px] md:w-[386px]  md:p-1 p-2 pt-[10px]  w-full  ">
-    <div class="menu-content transition-all pt-3 ">
-      <div class="links transition-all grid grid-cols-2 ">
+  <div class="menu-card bg-surface-2 absolute  right-[100%]   top-0  bottom-0  w-[50vw]   pointer-events-auto  bg-full  ">
+    <div class="menu-content transition-all h-[100%]   ">
+      <div class="links transition-all grid  gap-[1px] grid-cols-2 h-full ">
         {%- for link in linklists['main-menu'].links -%}
-          <h1 class=" select-none ">
-            <a
-              class=" hover:opacity-50  {%- if request.path == link.url -%}f opacity-50 hover:opacity-50 {%- endif -%}"
-              href="{{ link.url }}"
-            >
-              {{- link.title -}}
-            </a>
-          </h1>
+          <div class="link-box flex justify-center items-center h-full ">
+            <h2 class=" select-none  ">
+              <a
+                class=" hover:opacity-50  {%- if request.path == link.url -%}f opacity-50 hover:opacity-50 {%- endif -%}"
+                href="{{ link.url }}"
+              >
+                {{- link.title -}}
+              </a>
+            </h2>
+          </div>
         {%- endfor -%}
       </div>
     </div>

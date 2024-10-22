@@ -226,29 +226,27 @@ input[type=number] {
   transition: ease all 1s;
 }
 
-.menu-top{ 
-  transition: grid-template-rows 200ms;
+.menu-card{ 
+  
   border-radius:0;
   transition: ease all 0.2s;
 }
-.menu-top .links{
-opacity: 0;
+.menu-card .links{
+/* opacity: 0; */
 }
 
-.menu-content{ 
- overflow:hidden;
-  display: grid;
-  grid-template-rows: 0px ; 
-  overflow: hidden;
+.menu-content{  
+
+
   transition: cubic-bezier(.87,0,1,1) all 0.2s;
   
-  height: 0px;
+  
 }
 
 .menu-open .menu-content{
-  grid-template-rows: 1fr; 
-   transition: ease all 0.2s;
-  height: 400px;
+  /* grid-template-rows: 1fr; 
+  transition: ease all 0.2s;
+  height: 400px; */
   
 }
 
@@ -263,10 +261,12 @@ opacity: 0;
 opacity: 100;
 }
 
-.menu-open .menu-top{
-  border-radius:4px;
+.menu-open .menu-card{
+  
+  right: 50%;
+
   transition: ease all 0.1s;
-  background: #ffffff;
+  /* background: #ffffff; */
 }
 
 .menu-open{
@@ -281,7 +281,7 @@ opacity: 100;
   transition: ease all 0.3s ;
 }
 
-.menu-open .menu-top{
+.menu-open .menu-card{
   /* border:2px solid greenyellow; */
 }
 

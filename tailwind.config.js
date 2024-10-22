@@ -17,11 +17,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        surface1: "#FBF9F5",
-        type1: "#403128",
-        type2: "#403128",
-        stroke1: "#796A59",
-        test: "#ffb300",
+        'surface-1': "#FBF9F5",
+        'surface-2': "#FFFFFF",
+        'type-1': "#403128",
+        'type-2': "#403128",
+        'stroke-1': "#796A59",
+        'test': "#ffb300",
       },
 
       width: {

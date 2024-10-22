@@ -84,7 +84,7 @@
 
   <body
     id="{{ page_title | handle }}"
-    class=" relative bg-surface1 text-type1 text-grey-900 template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}"
+    class=" relative bg-surface-1 text-type1 text-grey-900 template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}"
   >
     {% comment %} <canvas id="myCanvas" class=" fixed inset-0  pointer-events-none " resize> </canvas> {% endcomment %}
 
@@ -92,7 +92,7 @@
 
     {% section 'live-cart' %}
 
-    <div class="js-main ">
+    <div class="js-main  ">
       {% render 'header' %}
 
       {{ content_for_layout }}
