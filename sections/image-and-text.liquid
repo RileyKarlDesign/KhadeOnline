@@ -14,8 +14,7 @@
 
       {% if section.settings.product_1 != '' %}
         <p>{{ section.settings.product_1.title }}</p>
-      {% endif %}
-    </div>
+      {% endif %} 
   </div>
   <div class="w-full h-full overflow-hidden md:p-[0px] md:pr-4  p-2">
     {{ section.settings.image1 | image_url: width: 1204 | image_tag: class: ' object-cover  js-fade' }}
