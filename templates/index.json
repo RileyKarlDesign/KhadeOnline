@@ -19,21 +19,17 @@
         "color": ""
       }
     },
-    "image_and_text_46tpEa": {
-      "type": "image-and-text",
+    "product_display_EXdn6f": {
+      "type": "product-display",
       "settings": {
         "image1": "shopify://shop_images/461286682_1082810543427482_2677143624051536350_n_1.jpg",
         "image2": "shopify://shop_images/461887735_1588289075428484_5573720972952366065_n_1.jpg",
-        "title": "Title Text",
-        "body": "Body text content",
-        "product_1": "prouduct-one",
-        "cta": "",
-        "color": ""
+        "product_1": "prouduct-one"
       }
     }
   },
   "order": [
     "collection_block_mn3pF8",
-    "image_and_text_46tpEa"
+    "product_display_EXdn6f"
   ]
 }
