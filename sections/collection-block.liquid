@@ -1,0 +1,74 @@
+<div
+  style="background:{{section.settings.color}}"
+  class=" js-section  pb-20  pt-20 h-fit bg-opacity-50 md:p-4 p-0 gap-2  "
+>
+  <div class="h-full">
+    <div class="h-fit  ">
+      <h1 class=" uppercase w-full text-center">{{ section.settings.title }}</h1>
+    </div>
+
+    <div class="  md:overflow-hidden overflow-scroll">
+      <div class=" md:grid  md:grid-cols-3  md:gap-2  flex gap-2 h-fit  md:pl-0  pl-2 md:w-full w-fit ">
+        {% if section.settings.prod1 != '' %}
+          <div class="pt-4 md:w-auto w-[300px]">
+            {% render 'product-card' with { product: section.settings.prod1, nofade: false } %}
+          </div>
+        {% endif %}
+        {% if section.settings.prod2 != '' %}
+          <div class="pt-4 md:w-auto w-[300px] ">
+            {% render 'product-card' with { product: section.settings.prod2, nofade: false } %}
+          </div>
+        {% endif %}
+        {% if section.settings.prod3 != '' %}
+          <div class="pt-4 md:w-auto w-[300px]">
+            {% render 'product-card' with { product: section.settings.prod3, nofade: false } %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collection Block",
+  "settings": [
+    {
+      "type": "product",
+      "id": "prod1",
+      "label": "Product One"
+    },
+
+    {
+      "type": "product",
+      "id": "prod2",
+      "label": "Product Two"
+    },
+
+    {
+      "type": "product",
+      "id": "prod3",
+      "label": "Product Three"
+    },
+
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+
+    {
+      "type": "color",
+      "id": "color",
+      "label": "Colour"
+    }
+  ],
+
+  "presets": [
+    {
+      "name": " Collection Block ",
+      "category": "Content"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,203 @@
+console.log('ani 1.O')
+
+// _______________
+
+
+document.addEventListener("DOMContentLoaded", (event) => {
+
+  // Fade in 
+
+
+  gsap.to('.js-main', { opacity: 1, duration: .8 });
+
+  // link dealy
+
+  let links = document.querySelectorAll("a");
+
+  for (let i = 0; i < links.length; i++) {
+
+
+    links[i].addEventListener("click", (e) => {
+      e.preventDefault();
+      gsap.to('.js-main', { opacity: 0, duration: .8, });
+      setTimeout(() => {
+        window.location.href = e.target.href;
+      }, 300)
+    })
+
+  }
+
+  // image-ani 
+
+  const images = document.querySelectorAll('.js-fade');
+
+  function setOpacity(entries, observer) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        gsap.to(entry.target, { opacity: 1, duration: .8, filter: "blur(0px)", ease: "power1.inOut" });
+        observer.unobserve(entry.target);
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(setOpacity, {
+    root: null, // use the viewport as the root
+    threshold: 0.2 // when 10% of the target is visible
+  });
+
+  images.forEach(image => {
+    observer.observe(image);
+  });
+
+
+
+  // Hr animation
+
+
+  let rules = document.querySelectorAll(".js-hr");
+
+  let grow = (entries, observer) => {
+
+    entries.forEach(entry => {
+
+      if (entry.isIntersecting) {
+
+        gsap.to(entry.target, { width: "100%", opacity: .1, duration: 1, ease: "power1.inOut" });
+
+        observer.unobserve(entry.target);
+
+      }
+
+    });
+
+  }
+
+  const observerTwo = new IntersectionObserver(grow, {
+    root: null, // use the viewport as the root
+    threshold: 0.2 // when 10% of the target is visible
+  });
+
+  rules.forEach(rule => { observerTwo.observe(rule); });
+
+
+
+
+  // product info ani 
+
+  let prodInfo = document.querySelector('.js-product-info');
+  let prodTitle = document.querySelector('.js-product-title');
+  let prodGallery = document.querySelector('.js-product-gallery');
+  let bgFade = document.querySelector('.bg-backdrop-color')
+  let Recs = document.querySelector('.recs-wrapper')
+  let footer = document.querySelector('.js-footer')
+  let footInView = false
+  console.log(Recs)
+
+  // Observer for recs
+
+  function shift(entries, observer) {
+
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+
+        if (!footInView) {
+          prodInfo.classList.add('info-shift-bottom')
+          bgFade.classList.remove('bg-fade-active')
+          console.log('adding info shift bottomm')
+
+        }
+
+      } else {
+
+        if (!footInView) {
+          prodInfo.classList.remove('info-shift-bottom')
+
+        }
+
+
+      }
+
+    });
+  }
+
+  function footerWatch(entries, observer) {
+
+    entries.forEach(entry => {
+
+      if (entry.isIntersecting) {
+        footInView = true;
+        console.log(' ther is a foot in view ')
+      } else {
+        footInView = false;
+        console.log('no foot in sight ')
+      }
+
+    });
+  }
+
+
+  const observerThree = new IntersectionObserver(shift, {
+    root: null, // use the viewport as the root
+    threshold: 0.02 // when 10% of the target is visible
+  });
+
+  const observerFour = new IntersectionObserver(footerWatch, {
+    root: null, // use the viewport as the root
+    threshold: 0.02 // when 10% of the target is visible
+  });
+
+  if (Recs) {
+    observerThree.observe(Recs);
+    observerFour.observe(footer)
+  }
+
+
+
+  //  Scroll event fix for product page 
+
+
+  function scrollDetect() {
+    let scrollY = window.scrollY;
+    window.addEventListener('scroll', throttle(handleScroll, 10));
+
+    function handleScroll(e) {
+      if (window.scrollY > scrollY) {
+        // console.log('scrolling down');
+      } else if (window.scrollY < scrollY) {
+        // 	console.log('scrolling up');
+      }
+      if (250 >= window.scrollY) {
+        // console.log('at top'); 
+        prodInfo.classList.remove("js-scrolled-info");
+        bgFade.classList.remove('bg-fade-active')
+      } else if (!prodInfo.classList.contains('info-shift-bottom')) {
+        prodInfo.classList.add("js-scrolled-info");
+        bgFade.classList.add('bg-fade-active')
+
+      }
+      scrollY = window.scrollY;
+
+    }
+  }
+
+  // https://www.sitepoint.com/throttle-scroll-events/
+  function throttle(fn, wait) {
+    var time = Date.now();
+    return function (e) {
+      if ((time + wait - Date.now()) < 0) {
+        fn(e);
+        time = Date.now();
+      }
+    }
+  }
+
+  if (document.querySelector('.js-product-info')) {
+    scrollDetect()
+  }
+
+
+
+
+
+});
+

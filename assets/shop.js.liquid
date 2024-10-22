@@ -1,0 +1,132 @@
+
+
+function runWhenInit() {
+  // console.log("The current cart state is: ", window.liquidAjaxCart.cart);
+}
+
+if (window.liquidAjaxCart?.init) {
+  // if Liquid Ajax Cart is already initialized
+  runWhenInit();
+} else {
+  // wait for Liquid Ajax Cart to be initialized
+  document.addEventListener("liquid-ajax-cart:init", runWhenInit);
+}
+
+// JS Back 
+
+let backBtn = document.querySelector('.js-back');
+
+let sendback = () => {
+  history.back()
+}
+
+console.log('adding')
+if (backBtn) {
+  backBtn.addEventListener('click', sendback)
+}
+
+
+
+// menu
+
+let menuOpen = false
+let menuBtn = document.querySelector('.menu-btn')
+let menu = document.querySelector('.js-menu')
+let menuTop = document.querySelector('.menu-top')
+menuTop.style.pointerEvents = "none"
+
+
+
+window.addEventListener('click', function (e) {
+
+  console.log(e.target);
+
+  if (e.target.contains(menu)) {
+    menuBtn.innerHTML = 'Menu';
+    menuOpen = false;
+    menu.style.pointerEvents = "none"
+    menuTop.style.pointerEvents = "none"
+    menu.classList.remove('menu-open')
+  }
+})
+
+
+
+
+
+
+let handelMenu = () => {
+  if (menuOpen) {
+    menuBtn.innerHTML = 'Menu';
+    menuOpen = false;
+    menu.classList.remove('menu-open')
+    menu.style.pointerEvents = "none"
+    menuTop.style.pointerEvents = "none"
+
+  } else {
+
+    menuBtn.innerHTML = 'Close';
+    menuOpen = true;
+    menu.classList.add('menu-open')
+    menu.style.pointerEvents = "auto"
+    menuTop.style.pointerEvents = "auto"
+
+  }
+}
+
+menuBtn.addEventListener('mousedown', handelMenu)
+
+
+
+
+
+// const swiper = new Swiper('.swiper', {
+//   // Optional parametersF
+
+//   loop: true,
+
+//   // If we need pagination
+//   pagination: {
+//     el: '.swiper-pagination',
+//   },
+
+//   // Navigation arrows
+//   navigation: {
+//     nextEl: '.swiper-button-next',
+//     prevEl: '.swiper-button-prev',
+//   },
+
+//   // And if we need scrollbar
+//   scrollbar: {
+//     el: '.swiper-scrollbar',
+//   },
+// });
+
+
+//  carrosell 
+
+
+
+
+// accoridan
+
+let a = document.querySelectorAll(".accordian");
+
+//  console.log(a);
+
+a.forEach((i) => {
+  i.addEventListener("click", (i) => {
+    //  console.log(" click ");
+    //  console.log(i.target.parentNode.classList);
+    if (i.target.parentNode.classList.contains("accordian-open")) {
+      i.target.parentNode.classList.remove("accordian-open");
+
+      aSym.innerHTML('(jdflk')
+
+    } else {
+      i.target.parentNode.classList.add("accordian-open");
+    }
+  });
+});
+
+
