@@ -3020,8 +3020,10 @@ input[type=number] {
   position: fixed;
   right: -1000px;
   top: 0;
+  bottom: 0;
   cursor: pointer;
   width: calc( 450px);
+  height: calc(var(--winHeight) );
   transition: ease all 0.3s ;
   overflow: hidden;
   opacity: 0;
@@ -3031,6 +3033,7 @@ input[type=number] {
   overflow: scroll;
   transition: right 0.3s;
   right: 0px;
+  bottom: 0;
   opacity: 1;
 }
 
@@ -3040,6 +3043,7 @@ input[type=number] {
     right: 0px;
     top: 100%;
     left: 0px;
+    bottom: 0;
     cursor: pointer;
     width: calc( 100vw  );
     height: calc(var(--winHeight) );
