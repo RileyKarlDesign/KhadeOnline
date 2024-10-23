@@ -1,7 +1,7 @@
-<div class="recs-wrapper">
-  <div class="product-recommendations h-40 " data-product-id="{{ product.id }}" data-limit="2">
-    <div class="product-">
-      {% comment %}
+{% comment %}
+  <div class="recs-wrapper">
+    <div class="product-recommendations h-40 " data-product-id="{{ product.id }}" data-limit="2">
+      <div class="product-">
         {%- if recommendations.products_count > 0 -%}
           <div class="line"></div>
           <div class="grid  grid-cols-4 p-4 ">
@@ -19,10 +19,10 @@
         {% else %}
           <p>nothing here yet</p>
         {% endif %}
-      {% endcomment %}
+      </div>
     </div>
   </div>
-</div>
+{% endcomment %}
 
 {% comment %}
   <script>

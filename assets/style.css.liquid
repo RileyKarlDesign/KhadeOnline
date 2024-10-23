@@ -36,7 +36,7 @@ h1 , h2 {
 
 h3, button, input , p, span, label { 
   line-height: 0.9rem ;
-  font-size: 0.9rem ;
+  font-size: 0.8rem ;
   font-family: 'Press', Times, serif  !important; 
  }
 
@@ -272,8 +272,8 @@ opacity: 100;
 }
 
 .menu-open{
- backdrop-filter: blur(5px);
- background-color: #cbcbcb6e;
+ backdrop-filter: blur(80px);
+ background-color: rgba(70, 39, 50, 0.77) ;
  transition: ease all 0.1s;
  pointer-events: all !important;
 }
@@ -315,10 +315,9 @@ opacity: 100;
 .my-cart{
   position: fixed;
   right: -1000px;
-  top: 20px;
+  top: 0;
   cursor: pointer;
-  width: calc( 450px  );
-  height: calc( var(--winHeight) - 60px);
+  width: calc( 450px);
   transition: ease all 0.3s ;
   overflow: hidden;
   opacity: 0;
@@ -331,7 +330,7 @@ opacity: 100;
 
   overflow: scroll;
   transition: right 0.3s;
-  right: 20px;
+  right: 0px;
   
   opacity: 1; 
 
@@ -538,3 +537,22 @@ canvas[resize] {
    
 }
 
+
+/* Label and inputs */
+
+:checked + label {
+   font-weight: bold;
+   background-color: black;
+   color: white; 
+   padding: 0 6px;
+   border-radius: 2px;
+}
+
+input[type=radio]{
+  display: none
+}
+
+:disabled + label {
+   font-weight: bold;
+   opacity: .3;
+}

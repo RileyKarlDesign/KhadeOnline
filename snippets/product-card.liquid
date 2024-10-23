@@ -1,25 +1,34 @@
 <div class="  group flex flex-col  relative pb-8  ">
   <a href="{{ product.url }}">
-    <div class="js-product-card pointer-events-none bg-black bg-opacity-5  relative overflow-hidden">
-      <div class=" pointer-events-none group-hover:opacity-0  h-fit rounded-sm  bg-opacity-50 overflow-hidden ">
-        {% if nofade %}
-          {{ product.featured_image | image_url: width: 700 | image_tag: class: 'w-full no-fade' }}
-        {% else %}
-          {{ product.featured_image | image_url: width: 700 | image_tag: class: 'w-full js-fade' }}
-        {% endif %}
+    <div class="js-product-card flex  pointer-events-none bg-black bg-opacity-5  relative overflow-hidden h-fit">
+      {% comment %}
+        <div class="  pointer-events-none group-hover:opacity-0 rounded-sm  bg-opacity-50 overflow-hidden border-2 border-test h-full ">
+          {% if nofade %}
+            {{ product.featured_image | image_url: width: 700 | image_tag: class: 'w-full no-fade h-full ' }}
+          {% else %}
+            {{
+              product.featured_image
+              | image_url: width: 700
+              | image_tag: class: 'w-full js-fade h-full border-2 border-test  h-full w-full object-fill'
+            }}
+          {% endif %}
+        </div>
+      {% endcomment %}
+
+      <div class=" pointer-events-none  w-full  ">
+        {{ product.images[0] | image_url: width: 700 | image_tag: class: 'js-fade h-full w-full  aspect-main ' }}
       </div>
 
       <div class=" pointer-events-none absolute inset-0 opacity-0 w-full group-hover:opacity-100 ">
-        {{ product.images[1] | image_url: width: 700 | image_tag: class: 'js-fade' }}
+        {{ product.images[1] | image_url: width: 700 | image_tag: class: 'js-fade h-full w-full ' }}
       </div>
     </div>
-    <div class=" pt-1 pointer-events-none ">
+    <div class=" pt-1 pointer-events-none  flex flex-col items-center ">
       <p>{{ product.title }}</p>
-      <p>{{ product.metafields.custom.range }}</p>
 
-      <div class="flex gap-2">
-        <p class="opacity-50 ">{{ product.price | money }}</p>
-        <p class="opacity-50 animate-blink ">{{ product.compare_at_price | money_with_currency }}</p>
+      <div class="flex flex-col gap-2">
+        <p class=" ">{{ product.price | money }}</p>
+        <p class="  ">{{ product.compare_at_price | money_with_currency }}</p>
       </div>
     </div>
   </a>

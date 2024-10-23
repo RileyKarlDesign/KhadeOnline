@@ -1,7 +1,7 @@
-<div class="flex flex-col  relative  ">
+<div class="flex  gap-2  relative  ">
   {% comment %}  Image {% endcomment %}
-  <a href="{{ product.url }}">
-    <div class="featuredProductImage h-fit rounded-sm overflow-hidden ">
+  <a href="{{ product.url }}" class="w-1/6">
+    <div class="featuredProductImage h-fit rounded-sm overflow-hidden bg-red-200 ">
       {{ product.image | image_url: width: 700 | image_tag }}
     </div>
 
@@ -14,9 +14,10 @@
     </div>
   </a>
   {% comment %}  info start  {% endcomment %}
-  <div class="pb-6 pt-1 flex justify-between w-full  ">
-    <div class="price">
+  <div class="pb-6 pt-1 flex flex-col justify-between w-full  ">
+    <div class="title">
       <p>{{ product.title }}</p>
+      <p>{{ product.size }}</p>
       <p class="opacity-50 ">{{ product.price | money }}</p>
     </div>
 
@@ -26,7 +27,7 @@
           <!-- "Minus one" button -->
           <a
             data-ajax-cart-quantity-minus
-            class="  hover:bg-stone-800 hover:text-white text-bold h-2 w-2 pb-[2px] bg-stone-500 bg-opacity-10 flex justify-center items-center text-center rounded-full backdrop-blur-md "
+            class="  hover:bg-stone-800 hover:text-white text-bold  pb-[2px] bg-stone-500 bg-opacity-10 flex justify-center items-center text-center rounded-full backdrop-blur-md "
             href="{{ routes.cart_change_url }}?line={{ index }}&quantity={{ product.quantity | minus: 1 }}"
           >
             -
@@ -45,7 +46,7 @@
           <!-- "Plus one" button -->
           <a
             data-ajax-cart-quantity-plus
-            class=" hover:bg-stone-800 hover:text-white text-bold h-2 w-2 pb-[2px]  bg-stone-500 bg-opacity-10 flex justify-center items-center text-center rounded-full backdrop-blur-md "
+            class="  hover:text-white text-boldpb-[2px]  bg-stone-500 bg-opacity-10 flex justify-center items-center text-center rounded-full backdrop-blur-md "
             href="{{ routes.cart_change_url }}?line={{ index }}&quantity={{ product.quantity | plus: 1 }}"
           >
             +
