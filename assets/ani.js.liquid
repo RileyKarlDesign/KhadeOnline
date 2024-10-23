@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   function setOpacity(entries, observer) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        gsap.to(entry.target, { opacity: 1, duration: .8, filter: "blur(0px)", ease: "power1.inOut" });
+        gsap.to(entry.target, { opacity: 1, duration: .2, filter: "blur(0px)", ease: "power1.inOut" });
         observer.unobserve(entry.target);
       }
     });
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
   const observer = new IntersectionObserver(setOpacity, {
     root: null, // use the viewport as the root
-    threshold: 0.2 // when 10% of the target is visible
+    threshold: 0.1 // when 10% of the target is visible
   });
 
   images.forEach(image => {
