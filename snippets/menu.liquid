@@ -6,7 +6,7 @@
     <div class="menu-content transition-all h-[100%]   ">
       <div class="links transition-all  grid  gap-[1px] lg:grid-cols-2 md:grid-cols-1 h-full ">
         {%- for link in linklists['main-menu'].links -%}
-          <div class="link-box flex justify-center items-center h-full ">
+          <div class="link-box flex justify-center items-center lg:h-full md:h-fit ">
             <h2 class=" select-none  ">
               <a
                 class=" hover:opacity-50  {%- if request.path == link.url -%}f opacity-50 hover:opacity-50 {%- endif -%}"
