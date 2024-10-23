@@ -1,8 +1,8 @@
 <div
-  class=" js-section relative flex mb-14 {% if section.settings.reverse %} flex-row-reverse  {% endif %}  flex-row  h-[140vh]   bg-opacity-50   "
+  class=" js-section relative flex mb-14 {% if section.settings.reverse %} flex-row-reverse  {% endif %}  flex-row  h-[150vh]   bg-opacity-50   "
 >
   <div class="w-full ">
-    <div class=" SMALL IMAGE md:h-[100vh] bg-red-300 h-full  md:pt-2 p-2   pt-0  flex items-center justify-center sticky top-0 ">
+    <div class=" SMALL IMAGE md:h-[100vh]  h-full  md:pt-2 p-2   pt-0  flex items-center justify-center sticky top-0 ">
       <div class="w-80  overflow-hidden md:p-[0px] md:pr-4  p-2">
         {{ section.settings.image2 | image_url: width: 1204 | image_tag: class: ' object-cover  js-fade' }}
       </div>
@@ -17,7 +17,7 @@
   </div>
 
   <div class="w-full h-full p-0   ">
-    {{ section.settings.image1 | image_url: width: 1204 | image_tag: class: ' h-full   js-fade' }}
+    {{ section.settings.image1 | image_url: width: 1204 | image_tag: class: ' h-full js-fade' }}
   </div>
 </div>
 
