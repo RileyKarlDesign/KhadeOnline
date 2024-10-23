@@ -1,7 +1,7 @@
-<div class="flex  gap-2 items-center relative  mb-1 ">
+<div class="flex  gap-2 items-center relative  mb-1 bg-white ">
   {% comment %}  Image {% endcomment %}
   <a href="{{ product.url }}" class="w-1/6">
-    <div class="featuredProductImage h-fit rounded-sm overflow-hidden bg-red-200 ">
+    <div class="featuredProductImage h-fit rounded-sm overflow-hidden  ">
       {{ product.image | image_url: width: 700 | image_tag }}
     </div>
 
