@@ -27,7 +27,7 @@
           <!-- "Minus one" button -->
           <a
             data-ajax-cart-quantity-minus
-            class="  hover:bg-stone-800 hover:text-white text-bold  pb-[2px] bg-stone-500 bg-opacity-10 flex justify-center items-center text-center rounded-full backdrop-blur-md "
+            class="  hover:bg-stone-800 hover:text-white text-bold  pb-[2px]   flex justify-center items-center text-center rounded-full backdrop-blur-md "
             href="{{ routes.cart_change_url }}?line={{ index }}&quantity={{ product.quantity | minus: 1 }}"
           >
             -
@@ -46,7 +46,7 @@
           <!-- "Plus one" button -->
           <a
             data-ajax-cart-quantity-plus
-            class="  hover:text-white text-boldpb-[2px]  bg-stone-500 bg-opacity-10 flex justify-center items-center text-center rounded-full backdrop-blur-md "
+            class="  hover:text-white text-boldpb-[2px]   flex justify-center items-center text-center rounded-full backdrop-blur-md "
             href="{{ routes.cart_change_url }}?line={{ index }}&quantity={{ product.quantity | plus: 1 }}"
           >
             +
