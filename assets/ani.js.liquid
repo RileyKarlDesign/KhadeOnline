@@ -31,6 +31,8 @@ for(var i = 0, n; n = stiches[i]; ++i) mixedStiches.push(n);
 
 console.log(mixedStiches) 
 
+shuffle(mixedStiches)
+
 gsap.from(mixedStiches, {opacity:0, duration:0.02, x:0, stagger:0.001})
 
 
