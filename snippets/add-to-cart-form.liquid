@@ -9,9 +9,7 @@
 {% if product.options.size > 1 %}
   {% assign has_multiple_options = true %}
 {% endif %}
-
 {% assign can_add_to_cart = false %}
-
 {% if has_multiple_variants == false and product.available %}{% endif %}
 
 <!-- //---------------------- json get ------------------------------ -->
@@ -77,7 +75,7 @@
     <label for="quanity" class="product-option-row-title"> Quanity: </label>
 
     <div class="js-quantity flex ">
-      <p class="js-quantity-minus  quantity-btn pb-1 hover:bg-stone-800 hover:text-white text-bold h-5 w-5 bg-stone-500 bg-opacity-10 flex justify-center items-center text-center rounded-full backdrop-blur-md ">
+      <p class="js-quantity-minus  quantity-btn pb-1 hover:bg-stone-800 hover:text-white text-bold h-5 w-5 bg-stone-500  flex justify-center items-center text-center rounded-full backdrop-blur-md ">
         -
       </p>
 

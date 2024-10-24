@@ -1083,7 +1083,7 @@ video {
 }
 
 .h-el {
-  height: 40px;
+  height: 30px;
 }
 
 .h-fit {
@@ -1536,6 +1536,10 @@ video {
   gap: 10px;
 }
 
+.gap-\[3px\] {
+  gap: 3px;
+}
+
 .overflow-hidden {
   overflow: hidden;
 }
@@ -1925,6 +1929,11 @@ video {
   background-color: transparent;
 }
 
+.bg-type-1 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(64 49 40 / var(--tw-bg-opacity));
+}
+
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -2097,6 +2106,11 @@ video {
   padding: 5px;
 }
 
+.px-1 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 .px-2 {
   padding-left: 25px;
   padding-right: 25px;
@@ -2110,6 +2124,11 @@ video {
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+.px-\[3px\] {
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
 .py-8 {
@@ -2556,6 +2575,11 @@ video {
 .text-stone-900 {
   --tw-text-opacity: 1;
   color: rgb(28 25 23 / var(--tw-text-opacity));
+}
+
+.text-surface-1 {
+  --tw-text-opacity: 1;
+  color: rgb(251 249 245 / var(--tw-text-opacity));
 }
 
 .text-white {
@@ -3008,8 +3032,8 @@ input[type=number] {
 }
 
 .menu-open{
-  -webkit-backdrop-filter: blur(80px);
-          backdrop-filter: blur(80px);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
   background-color: rgba(70, 39, 50, 0.77) ;
   transition: ease all 0.1s;
   pointer-events: all !important;
@@ -3246,9 +3270,7 @@ canvas[resize] {
 
 :checked + label {
   font-weight: bold;
-  background-color: black;
-  color: white;
-  padding: 0 6px;
+  background-color: rgba(18, 18, 18, 0.13);
   border-radius: 2px;
 }
 
@@ -3287,6 +3309,11 @@ label {
 .hover\:text-gray-400:hover {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+
+.hover\:text-surface-1:hover {
+  --tw-text-opacity: 1;
+  color: rgb(251 249 245 / var(--tw-text-opacity));
 }
 
 .hover\:text-white:hover {

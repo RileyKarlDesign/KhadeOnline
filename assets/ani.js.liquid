@@ -6,6 +6,25 @@ console.log('ani 1.O')
 document.addEventListener("DOMContentLoaded", (event) => {
 
 
+let menuOpen = false
+let menuBtn = document.querySelector('.menu-btn')
+let menu = document.querySelector('.js-menu')
+let menuTop = document.querySelector('.menu-card')
+menuTop.style.pointerEvents = "none"
+
+
+
+let closeMenu = () => {
+
+  menuBtn.innerHTML = 'Menu';
+    menuOpen = false;
+    menu.classList.remove('menu-open')
+    menu.style.pointerEvents = "none"
+    menuTop.style.pointerEvents = "none"
+    
+}
+
+
 // Logo 
 
 function shuffle(array) {
@@ -33,14 +52,14 @@ for(var i = 0, n; n = stiches[i]; ++i) mixedStiches.push(n);
 console.log(mixedStiches) 
 shuffle(mixedStiches)
 
-gsap.from(mixedStiches, {opacity:0, duration:0.005, x:0, stagger:0.005})
+gsap.from(mixedStiches, {opacity:0, duration:0.002, x:0, stagger:0.002})
 
 }
 
   // Fade in 
 
 
-  gsap.to('.js-main', { opacity: 1, duration: .5 });
+  gsap.to('.js-main', { opacity: 1, duration: .3 });
 
   // link dealy
 
@@ -51,8 +70,12 @@ gsap.from(mixedStiches, {opacity:0, duration:0.005, x:0, stagger:0.005})
 
     links[i].addEventListener("click", (e) => {
       e.preventDefault();
-      gsap.to('.js-main', { opacity: 0, duration: .5, });
+      closeMenu();
+      gsap.to('.js-main', { opacity: 0, duration: .3 });
+      gsap.to(mixedStiches, {opacity:0, duration:0.003, x:0, stagger:0.003})
+
       setTimeout(() => {
+        console.log(e.target.href)
         window.location.href = e.target.href;
       }, 300)
     })

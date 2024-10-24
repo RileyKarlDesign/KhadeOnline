@@ -5,10 +5,10 @@
     <p>{{ option.name }}</p>
   </label>
 
-  <div class="option-values flex gap-1">
+  <div class="option-values flex gap-[3px]">
     {% comment %}  option 1  {% endcomment %}
 
-    {% assign options = 'dan, henery, simon' | split: ', ' %}
+    {% assign options = '' | split: ', ' %}
     {%- assign options = options | append: option_name.title -%}
 
     {% assign e = '' %}
@@ -37,7 +37,7 @@
                     checked
                   {% endif %}
                 >
-                <label for="{{radio_id}}">
+                <label for="{{radio_id}}" class="px-[3px]">
                   {{ value }}
                 </label>
               </div>
@@ -76,7 +76,7 @@
                       checked
                     {% endif %}
                   >
-                  <label for="{{radio_id}}">
+                  <label for="{{radio_id}}" class="px-[3px]">
                     {{ value -}}
                   </label>
                 </div>

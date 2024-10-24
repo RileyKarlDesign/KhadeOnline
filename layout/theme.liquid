@@ -88,12 +88,15 @@
     {% comment %} <canvas id="myCanvas" class=" fixed inset-0  pointer-events-none " resize> </canvas> {% endcomment %}
 
     {% comment %}  styles for body wrap are in css due tw error {% endcomment %}
-
+    {% render 'header' %}
     {% section 'live-cart' %}
+    {% if template != 'product' %}
+      <div class="fixed top-0 left-0  h-screen w-screen flex items-center justify-center pointer-events-none z-30  ">
+        {% render 'logo' %}
+      </div>
+    {% endif %}
 
     <div class="js-main  ">
-      {% render 'header' %}
-
       {{ content_for_layout }}
       {% section 'footer' %}
 

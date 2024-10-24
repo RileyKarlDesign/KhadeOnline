@@ -50,7 +50,7 @@ module.exports = {
       },
 
       height: {
-        'el': '40px'
+        'el': '30px'
       },
 
 
