@@ -54,21 +54,22 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
 
+      let decodedFormOptions = decodeURIComponent(formOptions);
+
       variants.forEach(function (variant) {
 
-        console.log(`variant : ${variant.option1} ${variant.option2} ${variant.option3}`);  
-        console.log(`form : ${formOptions.option1.toString()} ${formOptions.option2} ${formOptions.option3}`);  
-        console.log(`decoded : ${decodeURIComponent(formOptions.option1.toString())} ${formOptions.option2} ${formOptions.option3}`); 
-
+      
         if (
-          variant.option1 === formOptions.option1 &&
-          variant.option2 === formOptions.option2 &&
-          variant.option3 === formOptions.option3
+          variant.option1 === decodeURIComponent(formOptions.option1) &&
+          variant.option2 === decodeURIComponent(formOptions.option2)
+          // variant.option3 === decodeURIComponent(formOptions.option3)
         ) {
           console.log('matched variant')
           selectedVariant = variant;
           selectedVariantMax = variant.inventory_quantity;
-          return false; // Exiting the loop early since the variant is found
+          console.log(selectedVariant)
+          console.log(selectedVariantMax)
+          return ; // Exiting the loop early since the variant is found
         }
 
 
