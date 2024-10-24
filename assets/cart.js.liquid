@@ -9,6 +9,9 @@ document.addEventListener("DOMContentLoaded", function () {
       let selectedVariant = productForm.getActiveVariant(elForm);
       console.log('form change');
       console.log( selectedVariant );
+      if(selectedVariant.inventory_quantity === 0){
+      atcBtn.disabled = true
+      }
       var formChangeEvent = new CustomEvent( "form:change", {
         detail: selectedVariant,
       });
@@ -88,15 +91,18 @@ document.addEventListener("DOMContentLoaded", function () {
         ($id = document.querySelector(".js-variant-id")),
         ($quantity = document.querySelector(".js-quantity-total")),
         ($addToCartButton = document.querySelector("#add-to-cart-button")),
-        ($maxQuantity = selectedVariant.inventory_quantity);
+        // ($maxQuantity = selectedVariant.inventory_quantity);
 
       if (canAddToCart) {
         $id.value = selectedVariant.id;
         $addToCartButton.disabled = false;
-        $quantity.dataset.max = $maxQuantity;
+        // $quantity.dataset.max = $maxQuantity;
       } else {
         $id.value = "null";
         $addToCartButton.disabled = true;
+        $addToCartButton.innerHTML = "Out of Stock";
+        $addToCartButton.pointerEvents = "none";
+        $addToCartButton.opacity = ".3";
       }
     },
 
