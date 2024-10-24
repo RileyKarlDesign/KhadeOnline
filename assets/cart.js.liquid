@@ -96,9 +96,11 @@ document.addEventListener("DOMContentLoaded", function () {
         $id.value = selectedVariant.id;
         $addToCartButton.disabled = false;
         $quantity.dataset.max = $maxQuantity;
+        $addToCartButton.innerHTML = "Add to cart";
       } else {
         $id.value = "null";
         $addToCartButton.disabled = true;
+        $addToCartButton.innerHTML = "Not in stock";
       }
     },
 
