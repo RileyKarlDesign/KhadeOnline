@@ -8,10 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
       let elForm = document.querySelector(addToCartFormSelector);
       let selectedVariant = productForm.getActiveVariant(elForm);
       console.log('form change');
-      console.log( selectedVariant );
-      if(selectedVariant.inventory_quantity === 0){
-      atcBtn.disabled = true
-      }
+      console.log( selectedVariant );    
       var formChangeEvent = new CustomEvent( "form:change", {
         detail: selectedVariant,
       });
