@@ -73,9 +73,9 @@ gsap.from(mixedStiches, {opacity:0, duration:0.002, x:0, stagger:0.002})
       closeMenu();
       gsap.to('.js-main', { opacity: 0, duration: .3 });
       gsap.to(mixedStiches, {opacity:0, duration:0.003, x:0, stagger:0.003})
-
+      console.log(e.target.href)
       setTimeout(() => {
-        console.log(e.target.href)
+        // console.log(e.target.href)
         window.location.href = e.target.href;
       }, 300)
     })

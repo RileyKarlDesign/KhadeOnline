@@ -39,7 +39,7 @@ menuTop.style.pointerEvents = "none"
 
 window.addEventListener('click', function (e) {
 
-  // console.log(e.target);
+  console.log(e.target);
 
   if (e.target.contains(menu)) {
     menuBtn.innerHTML = 'Menu';
@@ -58,7 +58,7 @@ let handelMenu = () => {
     menu.classList.remove('menu-open')
     menu.style.pointerEvents = "none"
     menuTop.style.pointerEvents = "none"
-
+ 
   } else {
 
     menuBtn.innerHTML = 'Close';

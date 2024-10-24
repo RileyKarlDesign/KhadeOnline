@@ -5,7 +5,11 @@
     <div class=" SMALL IMAGE md:h-[100vh]  h-full  md:pt-2 p-2   pt-0  flex items-center justify-center sticky top-0 ">
       <div class="w-80  overflow-hidden md:p-[0px] md:pr-4  p-2">
         <a href="{{ section.settings.product_1.url }}" class="pointer-events-auto">
-          {{ section.settings.image2 | image_url: width: 1204 | image_tag: class: ' object-cover  js-fade' }}
+          {{
+            section.settings.image2
+            | image_url: width: 1204
+            | image_tag: class: ' object-cover  js-fade  pointer-events-none'
+          }}
         </a>
       </div>
 

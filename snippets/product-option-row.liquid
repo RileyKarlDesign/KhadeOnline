@@ -1,7 +1,7 @@
 <!-- option -->
 
-<div class="product-option-row product-option-row-option grid  grid-cols-2 ">
-  <label class=" h-3 flex items-center" for="{% if type == 'select' %}select-{{ option.name}}{% endif %}">
+<div class="product-option-row product-option-row-option grid  grid-cols-2 mb-[5px]  ">
+  <label class="  flex items-center" for="{% if type == 'select' %}select-{{ option.name}}{% endif %}">
     <p>{{ option.name }}</p>
   </label>
 
@@ -19,28 +19,26 @@
           {% if e != value %}
             {% assign radio_id = 'option-' | append: option_name | append: '-' | append: value | handleize %}
 
-            <div class="product-option    flex h- items-center ">
-              <div>
-                <input
-                  class="variant-radio"
-                  {% if forloop.index == 1 and variant.inventory_quantity > 0 %}
-                    checked="checked"
-                  {% endif %}
-                  {% if variant.inventory_quantity <= 0 %}
-                    disabled
-                  {% endif %}
-                  type="radio"
-                  id="{{radio_id}}"
-                  name="{{ option_name }}"
-                  value="{{ value }}"
-                  {% if value == selected %}
-                    checked
-                  {% endif %}
-                >
-                <label for="{{radio_id}}" class="px-[3px]">
-                  {{ value }}
-                </label>
-              </div>
+            <div class="product-option   flex  items-center ">
+              <input
+                class="variant-radio"
+                {% if forloop.index == 1 and variant.inventory_quantity > 0 %}
+                  checked="checked"
+                {% endif %}
+                {% if variant.inventory_quantity <= 0 %}
+                  disabled
+                {% endif %}
+                type="radio"
+                id="{{radio_id}}"
+                name="{{ option_name }}"
+                value="{{ value }}"
+                {% if value == selected %}
+                  checked
+                {% endif %}
+              >
+              <label for="{{radio_id}}" class="px-[3px]">
+                {{ value }}
+              </label>
             </div>
 
             {% assign e = value %}
@@ -59,27 +57,25 @@
             {% if optionTwoE != value %}
               {% assign radio_id = 'option-' | append: option_name | append: '-' | append: value | handleize %}
               <div class="product-option    flex h- items-center ">
-                <div>
-                  <input
-                    class="variant-radio"
-                    {% if forloop.index == 1 and variant.inventory_quantity > 0 %}
-                      checked="checked"
-                    {% endif %}
-                    {% if variant.inventory_quantity <= 0 %}
-                      disabled
-                    {% endif %}
-                    type="radio"
-                    id="{{radio_id}}"
-                    name="{{ option_name }}"
-                    value="{{ value }}"
-                    {% if value == selected %}
-                      checked
-                    {% endif %}
-                  >
-                  <label for="{{radio_id}}" class="px-[3px]">
-                    {{ value -}}
-                  </label>
-                </div>
+                <input
+                  class="variant-radio"
+                  {% if forloop.index == 1 and variant.inventory_quantity > 0 %}
+                    checked="checked"
+                  {% endif %}
+                  {% if variant.inventory_quantity <= 0 %}
+                    disabled
+                  {% endif %}
+                  type="radio"
+                  id="{{radio_id}}"
+                  name="{{ option_name }}"
+                  value="{{ value }}"
+                  {% if value == selected %}
+                    checked
+                  {% endif %}
+                >
+                <label for="{{radio_id}}" class="px-[3px]">
+                  {{ value -}}
+                </label>
               </div>
             {% endif %}
           {% endif %}
