@@ -5,21 +5,21 @@ document.addEventListener("DOMContentLoaded", function () {
   let productForm = {
     onProductOptionChanged: function (event) {
    
-
-      let $form = document.querySelector(addToCartFormSelector);
-      let selectedVariant = productForm.getActiveVariant($form);
-
-      var formChangeEvent = new CustomEvent("form:change", {
+      let elForm = document.querySelector(addToCartFormSelector);
+      let selectedVariant = productForm.getActiveVariant(elForm);
+      console.log('form change');
+      console.log( selectedVariant );
+      var formChangeEvent = new CustomEvent( "form:change", {
         detail: selectedVariant,
       });
-      $form.dispatchEvent(formChangeEvent);
+      elForm.dispatchEvent(formChangeEvent);
     },
 
-    getActiveVariant: function ($form, newForm) {
-      let formEl = document.querySelector("#add-to-cart-form"),
-        variants = JSON.parse(decodeURIComponent(formEl.dataset.variants));
-
-      // formInlineData = $form.serializeArray(); // removed j query
+    getActiveVariant: function (elForm, newForm) {
+      let formEl = document.querySelector("#add-to-cart-form");
+      let variants = JSON.parse(decodeURIComponent(formEl.dataset.variants));
+      
+      // formInlineData = elForm.serializeArray(); // removed j query
 
       (formInlineData = new URLSearchParams(
         Array.from(new FormData(formEl))
@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Initialize an empty array to store objects
       let objectsArray = [];
+     
       let keyValuePairs = formInlineData.split("&");
       // Iterate over the key-value pairs and create objects
       keyValuePairs.forEach((pair) => {
@@ -45,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
         objectsArray.push(obj);
       });
 
-   
+      console.log(objectsArray)
 
       objectsArray.forEach(function (item, index) {
         if (item.name.indexOf("option") !== -1) {
@@ -54,26 +55,33 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       variants.forEach(function (variant) {
+
+        console.log(`variant : ${variant.option1} ${variant.option2} ${variant.option3}`);  
+        console.log(`form : ${formOptions.option1.toString()} ${formOptions.option2} ${formOptions.option3}`);  
+        console.log(`decoded : ${decodeURIComponent(formOptions.option1.toString())} ${formOptions.option2} ${formOptions.option3}`); 
+
         if (
           variant.option1 === formOptions.option1 &&
           variant.option2 === formOptions.option2 &&
           variant.option3 === formOptions.option3
         ) {
+          console.log('matched variant')
           selectedVariant = variant;
           selectedVariantMax = variant.inventory_quantity;
           return false; // Exiting the loop early since the variant is found
         }
+
+
       });
+       
 
       return selectedVariant;
     },
 
     validate: function (event) {
-  
-
-      let $form = this;
-
-      (selectedVariant = productForm.getActiveVariant($form)),
+      
+      let elForm = this;
+      (selectedVariant = productForm.getActiveVariant(elForm)),
         (hasVariant = selectedVariant !== null),
         (canAddToCart = hasVariant && selectedVariant.inventory_quantity > 0),
         ($id = document.querySelector(".js-variant-id")),
@@ -92,13 +100,9 @@ document.addEventListener("DOMContentLoaded", function () {
     },
 
     init: function () {
-      // $(document).on( "change", productOptionsSelector, productForm.onProductOptionChanged );
-      // $(document).on('form:change', addToCartFormSelector, productForm.validate)
-
-
       document.addEventListener("change", productForm.onProductOptionChanged);
       document.addEventListener("change", function (event) {
-        productForm.validate(event);
+      productForm.validate(event);
       });
     },
   };
