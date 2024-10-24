@@ -96,11 +96,17 @@ document.addEventListener("DOMContentLoaded", function () {
         $id.value = selectedVariant.id;
         $addToCartButton.disabled = false;
         $quantity.dataset.max = $maxQuantity;
-        $addToCartButton.innerHTML = "Add to cart";
+        $addToCartButton.innerHTML = "Add To Cart";
+        $addToCartButton.style.opacity = 1;
+        $addToCartButton.style.pointerEvents = 'auto';
       } else {
         $id.value = "null";
         $addToCartButton.disabled = true;
-        $addToCartButton.innerHTML = "Not in stock";
+        $addToCartButton.innerHTML = "Not In Stock";
+        // $addToCartButton.style.display = 'none';
+        $addToCartButton.style.opacity = .5;
+        $addToCartButton.style.pointerEvents = 'none';
+        
       }
     },
 
