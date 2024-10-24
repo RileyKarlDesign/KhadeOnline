@@ -15,15 +15,6 @@
         "image1": "shopify://shop_images/logosss.png"
       }
     },
-    "product_display_EXdn6f": {
-      "type": "product-display",
-      "settings": {
-        "image1": "shopify://shop_images/461286682_1082810543427482_2677143624051536350_n_1.jpg",
-        "image2": "shopify://shop_images/461887735_1588289075428484_5573720972952366065_n_1.jpg",
-        "product_1": "prouduct-one",
-        "reverse": false
-      }
-    },
     "product_display_jRGQ3r": {
       "type": "product-display",
       "settings": {
@@ -36,17 +27,26 @@
     "product_display_nLXYwx": {
       "type": "product-display",
       "settings": {
-        "image1": "shopify://shop_images/461887735_1588289075428484_5573720972952366065_n_1.jpg",
-        "image2": "shopify://shop_images/461286682_1082810543427482_2677143624051536350_n_1.jpg",
+        "image1": "shopify://shop_images/DSC03318.jpg",
+        "image2": "shopify://shop_images/DSC03320.jpg",
         "product_1": "prouduct-one",
         "reverse": true
+      }
+    },
+    "product_display_EXdn6f": {
+      "type": "product-display",
+      "settings": {
+        "image1": "shopify://shop_images/461258136_1515807242410837_6687408993361354455_n.jpg",
+        "image2": "shopify://shop_images/463944507_1350862042966167_8348264001336003385_n.jpg",
+        "product_1": "prouduct-one",
+        "reverse": false
       }
     }
   },
   "order": [
     "sticky_logo_KqE8rb",
-    "product_display_EXdn6f",
     "product_display_jRGQ3r",
-    "product_display_nLXYwx"
+    "product_display_nLXYwx",
+    "product_display_EXdn6f"
   ]
 }
