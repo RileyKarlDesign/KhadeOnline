@@ -1095,6 +1095,10 @@ video {
   height: 100vh;
 }
 
+.h-\[90vh\] {
+  height: 90vh;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -1197,10 +1201,6 @@ video {
 
 .w-\[300px\] {
   width: 300px;
-}
-
-.w-\[350px\] {
-  width: 350px;
 }
 
 .w-\[390px\] {
@@ -1402,10 +1402,6 @@ video {
 
 .grid-cols-8 {
   grid-template-columns: repeat(8, minmax(0, 1fr));
-}
-
-.grid-cols-\[200px_minmax\(900px\2c _1fr\)_100px\] {
-  grid-template-columns: 200px minmax(900px, 1fr) 100px;
 }
 
 .grid-rows-2 {
@@ -3017,8 +3013,8 @@ input[type=number] {
 .menu-card{
   border-radius:0;
   left: -100%;
-  opacity: 0;
-  pointer-events: none;
+  opacity: 1;
+  pointer-events:none;
   transition: ease all var(--transTime) ;
 }
 
@@ -3048,7 +3044,9 @@ input[type=number] {
 }
 
 .menu-open .menu-card{
-  left: 0%;
+  left: 0;
+  opacity: 1;
+  pointer-events:none;
   transition: ease all var(--transTime);
   /* background: #ffffff; */
 }
@@ -3183,7 +3181,7 @@ html.js-ajax-cart-processing .my-cart__items:before {
   background-color: rgba(251, 255, 0, 0.6);
   margin: 0 auto;
   inset: 0;
-  z-index: 30
+  z-index: 30;
 }
 
 /*  swiper slide  */
@@ -3312,7 +3310,7 @@ canvas[resize] {
 }
 
 input[type=radio]{
-  display: none
+  display: none;
 }
 
 label {
@@ -3323,6 +3321,16 @@ label {
   font-weight: bold;
   opacity: .3;
   cursor: not-allowed ;
+}
+
+.subheader-title {
+  width: 200px;
+}
+
+@media (max-width: 768px) {
+  .subheader-title {
+    width: 120px;
+  }
 }
 
 .hover\:bg-stone-800:hover {
@@ -3397,6 +3405,19 @@ label {
     height: 100%;
   }
 
+  .sm\:h-\[190vh\] {
+    height: 190vh;
+  }
+
+  .sm\:h-fit {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+
+  .sm\:h-\[90vh\] {
+    height: 90vh;
+  }
+
   .sm\:w-1\/2 {
     width: 50%;
   }
@@ -3425,6 +3446,10 @@ label {
     flex-direction: row;
   }
 
+  .sm\:flex-col {
+    flex-direction: column;
+  }
+
   .sm\:p-0 {
     padding: 0px;
   }
@@ -3435,6 +3460,14 @@ label {
 }
 
 @media (min-width: 768px) {
+  .md\:sticky {
+    position: sticky;
+  }
+
+  .md\:top-0 {
+    top: 0px;
+  }
+
   .md\:flex {
     display: flex;
   }
@@ -3468,12 +3501,20 @@ label {
     height: 100vh;
   }
 
+  .md\:h-full {
+    height: 100%;
+  }
+
   .md\:w-1\/2 {
     width: 50%;
   }
 
   .md\:w-\[30\%\] {
     width: 30%;
+  }
+
+  .md\:w-\[350px\] {
+    width: 350px;
   }
 
   .md\:w-\[50vw\] {

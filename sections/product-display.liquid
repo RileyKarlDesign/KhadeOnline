@@ -1,18 +1,18 @@
 <div
   class="
     lg:h-[130vh] js-section relative lg:flex  {% if section.settings.reverse %} flex-row-reverse  {% endif %}  pointer-events-none flex-row  h-[150vh]   bg-opacity-50
-    md:h-[70vh] md:flex
-    sm:grid sm:grid-cols-1 sm:h-[140vh]
+    md:h-[70vh] md:flex md:flex-row
+    sm:flex-col
+    h-fit
   "
 >
   <div class="w-full ">
     <div
       class="
-          SMALL IMAGE
-          lg:h-[100vh]
-          md:h-[70vh]  md:pt-2 p-2
-          sm:h-full
-        pt-0  flex items-center justify-center sticky top-0 h-full
+        SMALL IMAGE
+        lg:h-[100vh]
+        md:h-[70vh]  md:pt-2 p-2
+        pt-0  flex items-center justify-center sticky top-0
       "
     >
       <div class="w-80  overflow-hidden md:p-[0px] md:pr-4  p-2">
@@ -20,7 +20,7 @@
           {{
             section.settings.image2
             | image_url: width: 1204
-            | image_tag: class: ' object-cover  js-fade  pointer-events-none'
+            | image_tag: class: ' object-cover  js-fade  pointer-events-none md:h-full '
           }}
         </a>
       </div>
@@ -34,9 +34,9 @@
     </div>
   </div>
 
-  <div class="w-full h-full p-0 overflow-hidden   ">
+  <div class="w-full h-full  p-0 overflow-hidden   ">
     <a href="{{section.settings.product_1.url}}">
-      {{ section.settings.image1 | image_url: width: 1204 | image_tag: class: 'object-cover h-full js-fade ' }}
+      {{ section.settings.image1 | image_url: width: 1204 | image_tag: class: 'object-cover md:h-full  js-fade ' }}
     </a>
   </div>
 </div>

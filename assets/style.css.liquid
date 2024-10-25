@@ -275,7 +275,7 @@ input[type=number] {
   border-radius:0;
   left: -100%;
   opacity: 1;
-  pointer-events:none
+  pointer-events:none;
   transition: ease all var(--transTime) ;
 }
 .menu-card .links{
@@ -315,7 +315,7 @@ opacity: 100;
   
   left: 0;
   opacity: 1;
-  pointer-events:none
+  pointer-events:none;
 
   transition: ease all var(--transTime);
   /* background: #ffffff; */
@@ -474,7 +474,7 @@ html.js-ajax-cart-processing .my-cart__items:before {
   margin: 0 auto;
 
   inset: 0;
-  z-index: 30
+  z-index: 30;
 }
 
 
@@ -619,7 +619,7 @@ canvas[resize] {
 }
 
 input[type=radio]{
-  display: none
+  display: none;
 }
 
  label {
@@ -634,4 +634,10 @@ input[type=radio]{
 
 .subheader-title {
   width: 200px;
+} 
+
+@media (max-width: 768px) {
+  .subheader-title {
+  width: 120px;
+}
 }
