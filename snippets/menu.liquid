@@ -1,11 +1,12 @@
-<div class="js-menu fixed top-0 right-0 left-0 bottom-0 z-40 transition-all    ">
-  <div class="menu-card bg-surface-2 absolute p-2  right-[100%]   top-0  bottom-0 lg:w-[50vw] md:w-[80vw] sm:w-[80vw] xs:w-[80vw]   w-full flex flex-col    pointer-events-auto  bg-full   ">
-    <div class="header md:h-16 h-14 w-full flex justify-between ">
-      <p class="mb-1">Pages</p>
+<div class="js-menu fixed inset-0 z-40 ">
+  <div class="menu-card bg-surface-2 absolute right-[100%] top-0  bottom-0 lg:w-[50vw] md:w-[80vw] sm:w-[80vw] xs:w-[80vw]   w-full flex flex-col    pointer-events-auto  bg-full   ">
+    <div class=" h-[63px]   flex justify-between px-2 items-center ">
+      <p class="">Pages</p>
       <p class="menu-btn text-link">Close</p>
     </div>
-    <div class="menu-content transition-all  flex  h-fit    ">
-      <div class="links transition-all   flex flex-col gap-[10px]  h-fit ">
+
+    <div class="menu-content transition-all  flex  h-fit   ">
+      <div class="links transition-all px-2  flex flex-col gap-[10px]  h-fit ">
         {%- for link in linklists['main-menu'].links -%}
           <div class="text-link flex  lg:h-full md:h-fit ">
             <h1 class=" select-none  ">
@@ -23,6 +24,7 @@
 
     <div
       class="
+        px-2
                flex flex-col justify-end
         h-full
       "
