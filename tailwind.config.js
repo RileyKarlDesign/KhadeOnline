@@ -17,7 +17,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'surface-1': "#f6f3ed",
+        'surface-1': "#fffdf8",
         'surface-2': "#ffffff",
         'surface-3': "#4b4b4b05",
         'type-1': "#403128",
