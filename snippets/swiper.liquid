@@ -1,11 +1,11 @@
 <div class="product-swiper overflow-hidden    w-full  ">
   <!-- Additional required wrapper -->
-  <div class="swiper-wrapper  w-full     ">
+  <div class="swiper-wrapper  w-full sm:p-0 p-1     ">
     <!-- Slides -->
     {% for image in product.images %}
       <div class="swiper-slide    ">
         <div class="  h-full w-full ">
-          {{ image | image_url: width: 700 | image_tag: class: ' object-fill h-full' }}
+          {{ image | image_url: width: 700 | image_tag: class: ' object-cover h-full' }}
         </div>
       </div>
     {% endfor %}

@@ -52,7 +52,7 @@ for(var i = 0, n; n = stiches[i]; ++i) mixedStiches.push(n);
 console.log(mixedStiches) 
 shuffle(mixedStiches)
 
-gsap.from(mixedStiches, {opacity:0, duration:0.002, x:0, stagger:0.002})
+gsap.to(mixedStiches, {opacity:1, duration:0.002, x:0, stagger:0.002})
 
 }
 
@@ -77,7 +77,7 @@ gsap.from(mixedStiches, {opacity:0, duration:0.002, x:0, stagger:0.002})
       setTimeout(() => {
         // console.log(e.target.href)
         window.location.href = e.target.href;
-      }, 300)
+      }, 20) 
     })
 
   }
