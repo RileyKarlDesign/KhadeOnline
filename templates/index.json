@@ -41,13 +41,6 @@
         "reverse": false
       }
     },
-    "block_portrait_image_MPQjV6": {
-      "type": "Block-portrait-Image",
-      "settings": {
-        "image": "shopify://shop_images/462982853_408264588800393_3191901453731340322_n.jpg",
-        "color": ""
-      }
-    },
     "product_display_nLXYwx": {
       "type": "product-display",
       "settings": {
@@ -63,7 +56,6 @@
     "product_display_jRGQ3r",
     "block_portrait_image_KfbcUp",
     "product_display_EXdn6f",
-    "block_portrait_image_MPQjV6",
     "product_display_nLXYwx"
   ]
 }
