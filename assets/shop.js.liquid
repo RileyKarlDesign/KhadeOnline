@@ -30,7 +30,7 @@ if (backBtn) {
 // menu
 
 let menuOpen = false
-let menuBtn = document.querySelector('.menu-btn')
+let menuBtn = document.querySelectorAll('.menu-btn')
 let menu = document.querySelector('.js-menu')
 let menuTop = document.querySelector('.menu-card')
 menuTop.style.pointerEvents = "none"
@@ -81,7 +81,10 @@ let closeMenu = () => {
 
 }
 
-menuBtn.addEventListener('click', handelMenu)
+menuBtn.forEach((btn) => {
+  btn.addEventListener('click', handelMenu)
+})
+
 
 
 // Cart 

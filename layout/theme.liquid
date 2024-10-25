@@ -98,7 +98,9 @@
 
     <div class="js-main  ">
       {{ content_for_layout }}
-      {% section 'footer' %}
+      <div class="p-2 w-1/2">
+        {% render 'footer' %}
+      </div>
 
       {% render 'cookies' %}
     </div>

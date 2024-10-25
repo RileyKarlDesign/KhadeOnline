@@ -19,8 +19,17 @@
 :root {
   --winHeight: 100vh;
   --bgbg: rgba(63, 38, 28, 0.78) ;
-  --bgBlur: 10px;
+  --bgBlur: 40px;
   --transTime: .4s;
+}
+
+#id{
+ mix-blend-mode: difference !important;
+}
+
+.text-link:hover{
+  /* color: red; */
+  cursor: pointer ;
 }
 
 
@@ -30,12 +39,20 @@
   }
 }
 
-h1 , h2 { 
+h1 { 
+  font-family: 'SangBlu', serif ; 
+	line-height: 2rem;
+	font-size: 2rem; 
+  letter-spacing: 0px;
+} 
+
+ h2 { 
   font-family: 'SangBlu', serif ; 
 	line-height: 1.3rem;
 	font-size: 1.4rem; 
   letter-spacing: 0px;
 } 
+
 
 h3, button, input , p, span, label { 
   line-height: 0.9rem ;
@@ -250,7 +267,7 @@ input[type=number] {
 .menu-card{ 
   
   border-radius:0;
-
+  left: -100vw;
   transition: ease all var(--transTime) ;
 }
 .menu-card .links{
@@ -286,7 +303,7 @@ opacity: 100;
 
 .menu-open .menu-card{
   
-  right: 50%;
+  left: 0;
 
   transition: ease all var(--transTime);
   /* background: #ffffff; */
@@ -295,7 +312,7 @@ opacity: 100;
 .menu-open{
  
  background-color: var(--bgbg) !important;
-  backdrop-filter:blur(--bgBlur)!important;
+  backdrop-filter:var(--bgBlur)!important;
  transition: ease all var(--transTime);
  pointer-events: all !important;
 }
@@ -343,7 +360,7 @@ opacity: 100;
  .js-cart-bg-active {
   /* opacity: .4 !important; */
   background-color: var(--bgbg) !important;
-  backdrop-filter:blur(--bgBlur)!important;
+  backdrop-filter: blur(var(--bgBlur))!important;
   transition: ease all var(--transTime) ;
 }
 
