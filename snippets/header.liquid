@@ -6,7 +6,7 @@
       </h3>
 
       {%- for link in linklists.header.links -%}
-        <div class="link-box flex justify-center items-center lg:h-full md:h-fit w-[40px] pointer-events-auto ">
+        <div class="text-link flex justify-center items-center lg:h-full md:h-fit w-[40px] pointer-events-auto ">
           <h3 class=" select-none  ">
             <a
               class=" hover:opacity-50  {%- if request.path == link.url -%}f opacity-50 hover:opacity-50 {%- endif -%}"

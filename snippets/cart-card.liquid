@@ -1,6 +1,6 @@
-<div class="flex  gap-1 items-center relative  mb-1 bg-surface-3 rounded-sm overflow-hidden border-[1px] border-text ">
+<div class="flex gap-1  relative  mb-1 bg-surface-3 rounded-sm overflow-hidden border-[1px] border-text ">
   {% comment %}  Image {% endcomment %}
-  <a href="{{ product.url }}" class="w-1/6">
+  <a href="{{ product.url }}" class="w-40">
     <div class="featuredProductImage h-fit  overflow-hidden  ">
       {{ product.image | image_url: width: 700 | image_tag }}
     </div>
@@ -14,24 +14,21 @@
     </div>
   </a>
   {% comment %}  info start  {% endcomment %}
-  <div class=" flex flex-col justify-between w-full  ">
+  <div class=" flex flex-col justify-between w-full p-1 pl-0  h-full  ">
     <div class="title">
       <p>{{ product.title }}</p>
-
       {% for e in product.variants %}
         <p>{{ e.title }}</p>
       {% endfor %}
-
       <p class=" ">{{ product.price | money }}</p>
     </div>
-
     <div class="quanity">
       <ajax-cart-quantity>
         <div class="flex w-fit items-center justify-center">
           <!-- "Minus one" button -->
           <a
             data-ajax-cart-quantity-minus
-            class="  hover:bg-stone-800 hover:text-white text-bold  pb-[2px]   flex justify-center items-center text-center rounded-full backdrop-blur-md "
+            class="  hover:bg-stone-800 hover:text-white text-bold  flex justify-center items-center text-center rounded-full backdrop-blur-md "
             href="{{ routes.cart_change_url }}?line={{ index }}&quantity={{ product.quantity | minus: 1 }}"
           >
             -
@@ -58,8 +55,8 @@
         </div>
 
         <!-- "Remove item" button -->
-        <a class=" leading-none mt-4 " data-ajax-cart-request-button href="{{ product.url_to_remove }}">
-          <div class=" bg-white bg-opacity-50 w-8 h-8 rounded-full  backdrop-blur-lg  absolute top-1 right-1 flex  justify-center items-center pt-[7px]">
+        <a class=" leading-none  " data-ajax-cart-request-button href="{{ product.url_to_remove }}">
+          <div class=" bg-white bg-opacity-50 w-fit h-1 rounded-full  backdrop-blur-lg  absolute top-1 right-1 flex  justify-center items-center ">
             <p class="text-[30px] leading-none  ">˟</p>
           </div>
         </a>
