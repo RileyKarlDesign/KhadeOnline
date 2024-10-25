@@ -43,12 +43,20 @@
         "product_1": "prouduct-one",
         "reverse": true
       }
+    },
+    "block_portrait_image_b8beBT": {
+      "type": "Block-portrait-Image",
+      "settings": {
+        "image": "shopify://shop_images/DSC03290.jpg",
+        "color": ""
+      }
     }
   },
   "order": [
     "product_display_jRGQ3r",
     "block_portrait_image_KfbcUp",
     "product_display_EXdn6f",
-    "product_display_nLXYwx"
+    "product_display_nLXYwx",
+    "block_portrait_image_b8beBT"
   ]
 }
