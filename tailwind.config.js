@@ -22,7 +22,7 @@ module.exports = {
         'surface-3': "#4b4b4b05",
         'type-1': "#403128",
         'type-2': "#403128",
-        'stroke-1': "#796A59",
+        'stroke-1': "#796a59ff",
         'stroke-2': "#403128",
         'test': "#ffb300",
       },

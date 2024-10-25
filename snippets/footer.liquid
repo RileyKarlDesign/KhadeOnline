@@ -1,53 +1,56 @@
-<div class="js-footer grid grid-cols-3 gap-2  w-full   pt-40 ">
-  <div class=" level1 flex l md:gap-2  gap-2  ">
-    <div class="adress w-fit   ">
-      <p class="mb-1">Info</p>
-      <div class=" adress-info bottom h-fit w-fit">
-        <h3>
-          Khade Studio <br>
-          167b Brick Lane <br>
-          London <br>
-          E27EE
-        </h3>
-      </div>
+<div class="js-footer flex flex-col gap-2  w-full  pt-40 ">
+  <div class="adress grid grid-cols-2  pt-[5px] border-t-[1px] border-stroke-1">
+    <p class="mb-1">Adress</p>
+    <div class=" adress-info bottom h-fit w-fit">
+      <h3>
+        Khade Studio <br>
+        167b Brick Lane <br>
+        London E27EE
+      </h3>
     </div>
   </div>
 
-  <div class="links ">
+  <div class="links grid grid-cols-2  pt-[5px] border-t-[1px] border-stroke-1 ">
     <p class="mb-1">Sub Pages</p>
-    {%- for link in linklists.footer.links -%}
-      <div class="text-link flex justify-center items-center  w-fit md:h-fit ">
-        <p class=" select-none  ">
-          <a
-            class=" hover:opacity-50  {%- if request.path == link.url -%}f opacity-50 hover:opacity-50 {%- endif -%}"
-            href="{{ link.url }}"
-          >
-            {{- link.title -}}
-          </a>
-        </p>
-      </div>
-    {%- endfor -%}
+    <div class="subpage-links">
+      {%- for link in linklists.footer.links -%}
+        <div class="text-link flex justify-center items-center  w-fit md:h-fit ">
+          <p class=" select-none  ">
+            <a
+              class=" hover:opacity-50  {%- if request.path == link.url -%}f opacity-50 hover:opacity-50 {%- endif -%}"
+              href="{{ link.url }}"
+            >
+              {{- link.title -}}
+            </a>
+          </p>
+        </div>
+      {%- endfor -%}
+    </div>
   </div>
 
-  <div class="social info ">
+  <div class="social info grid grid-cols-2  pt-[5px] border-t-[1px] border-stroke-1 ">
     <p class="mb-1">Social</p>
-    {%- for link in linklists.social.links -%}
-      <div class="text-link flex   md:h-fit ">
-        <p class=" select-none  ">
-          <a
-            class=" hover:opacity-50  {%- if request.path == link.url -%}f opacity-50 hover:opacity-50 {%- endif -%}"
-            href="{{ link.url }}"
-            target="_blank"
-          >
-            {{- link.title -}}
-          </a>
-        </p>
-      </div>
-    {%- endfor -%}
+
+    <div class="social-links">
+      {%- for link in linklists.social.links -%}
+        <div class="text-link flex   md:h-fit ">
+          <p class=" select-none  ">
+            <a
+              class=" hover:opacity-50  {%- if request.path == link.url -%}f opacity-50 hover:opacity-50 {%- endif -%}"
+              href="{{ link.url }}"
+              target="_blank"
+            >
+              {{- link.title -}}
+            </a>
+          </p>
+        </div>
+      {%- endfor -%}
+    </div>
   </div>
 </div>
+
 <div class=" copyright  md:flex-row md:flex  mt-20  ">
-  <div class="   ">
+  <div class="  opacity-40  ">
     <h3>©Khade Studios 2024</h3>
   </div>
 </div>
