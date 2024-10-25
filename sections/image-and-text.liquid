@@ -1,16 +1,21 @@
-<div class=" js-section flex  justify-center gap-10 pt-10 pb-40 items-center  ">
-  <div class="md:w-[30%] w-[90%]  aspect-main ">
-    {{ section.settings.image | image_url: width: 1204 | image_tag: class: 'w-full js-fade' }}
+<div class="flex flex-col h-fit ">
+  <div class="flex flex-col pt-40 pb-40  p-2">
+    <div class=" flex md:flex-row flex-col  gap-1  relative  ">
+      <div class="   md:sticky md:top-0   ">
+        <div class="border-t-[1px] border-stroke-1 pt-[5px]  subheader-title ">
+          <p>About Khade</p>
+        </div>
+      </div>
+      <div class=" md:w-[350px]    ">
+        <div class=" full ">
+          <h2 class=" border-t-[1px] border-stroke-1 pt-[10px] w-full pb-1 ">{{ section.settings.title }}</h2>
+          <p class="">{{ section.settings.body }}</p>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class=" md:w-[80%]  w-[90%]  "></div>
-  <h1 class="   ">
-    {{ section.settings.title }}
-  </h1>
-</div>
-<div class=" md:w-[80%]  w-[90%]  ">
-  <p class="   ">
-    {{ section.settings.body }}
-  </p>
+
+  {{ section.settings.image | image_url: width: 1204 | image_tag: class: ' w-full h-[80vh] object-cover ' }}
 </div>
 
 {% schema %}
@@ -26,6 +31,11 @@
       "type": "text",
       "id": "title",
       "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Sub Title"
     },
     {
       "type": "text",
