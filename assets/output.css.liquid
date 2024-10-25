@@ -701,6 +701,10 @@ video {
   right: 100%;
 }
 
+.right-\[2px\] {
+  right: 2px;
+}
+
 .top-0 {
   top: 0px;
 }
@@ -747,10 +751,6 @@ video {
 
 .top-\[55px\] {
   top: 55px;
-}
-
-.right-\[2px\] {
-  right: 2px;
 }
 
 .-z-10 {
@@ -1199,6 +1199,10 @@ video {
   width: 300px;
 }
 
+.w-\[350px\] {
+  width: 350px;
+}
+
 .w-\[390px\] {
   width: 390px;
 }
@@ -1234,14 +1238,6 @@ video {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-\[350\] {
-  width: 350;
-}
-
-.w-\[350px\] {
-  width: 350px;
 }
 
 .flex-shrink {
@@ -2334,10 +2330,6 @@ video {
   padding-top: 70px;
 }
 
-.pt-\[7px\] {
-  padding-top: 7px;
-}
-
 .pt-\[9px\] {
   padding-top: 9px;
 }
@@ -3024,7 +3016,9 @@ input[type=number] {
 
 .menu-card{
   border-radius:0;
-  left: -100vw;
+  left: -100%;
+  opacity: 0;
+  pointer-events: none;
   transition: ease all var(--transTime) ;
 }
 
@@ -3054,7 +3048,7 @@ input[type=number] {
 }
 
 .menu-open .menu-card{
-  left: 0;
+  left: 0%;
   transition: ease all var(--transTime);
   /* background: #ffffff; */
 }
@@ -3354,6 +3348,11 @@ label {
   color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 
+.hover\:text-stone-300:hover {
+  --tw-text-opacity: 1;
+  color: rgb(214 211 209 / var(--tw-text-opacity));
+}
+
 .hover\:text-surface-1:hover {
   --tw-text-opacity: 1;
   color: rgb(246 243 237 / var(--tw-text-opacity));
@@ -3362,16 +3361,6 @@ label {
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.hover\:text-stone-500:hover {
-  --tw-text-opacity: 1;
-  color: rgb(120 113 108 / var(--tw-text-opacity));
-}
-
-.hover\:text-stone-300:hover {
-  --tw-text-opacity: 1;
-  color: rgb(214 211 209 / var(--tw-text-opacity));
 }
 
 .hover\:opacity-30:hover {
@@ -3408,16 +3397,16 @@ label {
     height: 100%;
   }
 
+  .sm\:w-1\/2 {
+    width: 50%;
+  }
+
   .sm\:w-\[80vw\] {
     width: 80vw;
   }
 
   .sm\:w-full {
     width: 100%;
-  }
-
-  .sm\:w-1\/2 {
-    width: 50%;
   }
 
   .sm\:grid-cols-1 {
@@ -3434,10 +3423,6 @@ label {
 
   .sm\:flex-row {
     flex-direction: row;
-  }
-
-  .sm\:p-1 {
-    padding: 15px;
   }
 
   .sm\:p-0 {

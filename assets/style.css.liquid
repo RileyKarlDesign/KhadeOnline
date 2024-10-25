@@ -273,12 +273,16 @@ input[type=number] {
 .menu-card{ 
   
   border-radius:0;
-  left: -100vw;
+  left: -100%;
+  opacity: 1;
+  pointer-events:none
   transition: ease all var(--transTime) ;
 }
 .menu-card .links{
 /* opacity: 0; */
 }
+
+
 
 .menu-content{  
 
@@ -310,6 +314,8 @@ opacity: 100;
 .menu-open .menu-card{
   
   left: 0;
+  opacity: 1;
+  pointer-events:none
 
   transition: ease all var(--transTime);
   /* background: #ffffff; */
@@ -624,4 +630,8 @@ input[type=radio]{
    font-weight: bold;
    opacity: .3;
    cursor: not-allowed ;
+}
+
+.subheader-title {
+  width: 200px;
 }
