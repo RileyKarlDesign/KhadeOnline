@@ -21,20 +21,6 @@
         "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elit mi, condimentum at tincidunt a, viverra a nisl. Vestibulum ultrices diam id pulvinar interdum. Vivamus pellentesque faucibus vehicula. Nam augue arcu, rhoncus vel luctus at, pretium ut quam. Quisque vel mi venenatis, auctor velit in, aliquet nibh. Praesent orci velit, varius ac massa ut, posuere venenatis sapien. Pellentesque tortor elit, sagittis non accumsan ornare, posuere sit amet turpis. Sed metus nulla, eleifend quis cursus in, consequat vitae neque. Aenean nibh orci, tempus quis augue maximus, hendrerit molestie leo. Cras vestibulum tristique metus, in fermentum metus bibendum quis. Morbi nunc ex, facilisis sed dapibus vel, aliquam ac ex."
       }
     },
-    "block_portrait_image_Lzqij7": {
-      "type": "Block-portrait-Image",
-      "settings": {
-        "image": "shopify://shop_images/IMG_2263.heic",
-        "color": ""
-      }
-    },
-    "full_width_image_BUT8fw": {
-      "type": "full-width-image",
-      "settings": {
-        "image": "shopify://shop_images/461258136_1515807242410837_6687408993361354455_n.jpg",
-        "color": ""
-      }
-    },
     "form": {
       "type": "contact-form",
       "disabled": true,
@@ -45,8 +31,6 @@
   "order": [
     "main",
     "image_and_text_MApG9i",
-    "block_portrait_image_Lzqij7",
-    "full_width_image_BUT8fw",
     "form"
   ]
 }
