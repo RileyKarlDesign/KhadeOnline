@@ -1,22 +1,22 @@
 <div class="js-menu fixed top-0 right-0 left-0 bottom-0 z-40 transition-all    ">
   <div class="menu-card bg-surface-2 absolute  right-[100%]   top-0  bottom-0  w-[50vw]   pointer-events-auto  bg-full  ">
+    <div class="line w-full h-[1px] absolute top-[50%] bg-stroke-1  lg:visible md:hidden   hidden "></div>
+    <div class="line h-full w-[1px] absolute left-[50%] bg-stroke-1 lg:visible md:hidden  hidden  "></div>
     <div class="menu-content transition-all h-[100%]   ">
-      <div class="links transition-all   flex flex-col items-center justify-center gap-[10px]  h-full ">
+      <div class="links transition-all  lg:grid lg:grid-cols-2 lg:gap-[1px]  flex flex-col items-center justify-center gap-[10px]  h-full ">
         {%- for link in linklists['main-menu'].links -%}
-          <div class="text-link flex justify-center items-center  md:h-fit ">
-            <h1 class=" select-none  ">
+          <div class="link-box flex justify-center items-center lg:h-full md:h-fit ">
+            <h2 class=" select-none  ">
               <a
                 class=" hover:opacity-50  {%- if request.path == link.url -%}f opacity-50 hover:opacity-50 {%- endif -%}"
                 href="{{ link.url }}"
               >
                 {{- link.title -}}
               </a>
-            </h1>
+            </h2>
           </div>
         {%- endfor -%}
       </div>
     </div>
-
-    {% section 'footer' %}
   </div>
 </div>

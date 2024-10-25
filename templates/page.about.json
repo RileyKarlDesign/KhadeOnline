@@ -9,13 +9,6 @@
  */
 {
   "sections": {
-    "background_image_g3TBqk": {
-      "type": "background-image",
-      "settings": {
-        "image1": "shopify://shop_images/fence_2dbb378d-151b-45c7-b819-cd41ea25c254.png",
-        "color1": "#ffcd00"
-      }
-    },
     "main": {
       "type": "main-about",
       "settings": {
@@ -24,7 +17,7 @@
     "full_width_image_BUT8fw": {
       "type": "full-width-image",
       "settings": {
-        "image": "shopify://shop_images/451422937_18011592974569672_3261032625051833543_n.jpg",
+        "image": "shopify://shop_images/461258136_1515807242410837_6687408993361354455_n.jpg",
         "color": ""
       }
     },
@@ -36,7 +29,6 @@
     }
   },
   "order": [
-    "background_image_g3TBqk",
     "main",
     "full_width_image_BUT8fw",
     "form"
