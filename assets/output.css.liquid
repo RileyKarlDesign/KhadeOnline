@@ -1927,6 +1927,11 @@ video {
   background-color: rgb(113 63 18 / var(--tw-bg-opacity));
 }
 
+.bg-surface-1 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(246 243 237 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-0 {
   --tw-bg-opacity: 0;
 }
@@ -3421,6 +3426,10 @@ label {
     flex-direction: column;
   }
 
+  .sm\:flex-col-reverse {
+    flex-direction: column-reverse;
+  }
+
   .sm\:p-0 {
     padding: 0px;
   }
@@ -3474,6 +3483,10 @@ label {
 
   .md\:h-screen {
     height: 100vh;
+  }
+
+  .md\:h-14 {
+    height: 3.5rem;
   }
 
   .md\:w-1\/2 {
@@ -3612,5 +3625,9 @@ label {
 
   .lg\:grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .lg\:flex-row-reverse {
+    flex-direction: row-reverse;
   }
 }
