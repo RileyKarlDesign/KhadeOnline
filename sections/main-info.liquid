@@ -1,22 +1,24 @@
-<div class="p-2 md:flex  gap-2  ">
-  <div class=" w-full pt-40 sticky top-0 ">
-    {%- for link in linklists.info.links -%}
-      <h3 class=" select-none  ">
-        <a
-          class=" hover:opacity-50 {%- if request.path == link.url -%}f opacity-50 hover:opacity-50 {%- endif -%}"
-          href="{{ link.url }}"
-        >
-          {{- link.title -}}
-        </a>
-      </h3>
-    {%- endfor -%}
+<div class="p-2  grid  gap-1 grid-cols-[200px_minmax(900px,_1fr)_100px]  relative  ">
+  <div class="  pt-40 sticky top-0   ">
+    <div class="border-t-[1px] border-stroke-1 pt-[5px] ">
+      {%- for link in linklists.info.links -%}
+        <h3 class=" select-none  ">
+          <a
+            class=" hover:opacity-50 {%- if request.path == link.url -%}f opacity-50 hover:opacity-50 {%- endif -%}"
+            href="{{ link.url }}"
+          >
+            {{- link.title -}}
+          </a>
+        </h3>
+      {%- endfor -%}
+    </div>
   </div>
 
-  <div class="  w-full pt-40 ">
-    <div class="flex  ">
+  <div class=" w-[350px] pt-40  ">
+    <div class="flex border-t-[1px] border-stroke-1 pt-[9px] ">
       <h2 class="pb-1">{{ page.title }}</h2>
     </div>
-    <div class=" w-2/3 ">
+    <div class=" full ">
       {{ page.content }}
     </div>
   </div>
