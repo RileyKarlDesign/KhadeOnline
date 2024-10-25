@@ -1,9 +1,13 @@
 <div
   style="background:{{section.settings.color}}"
-  class=" js-section relative  md:h-screen h-fit bg-opacity-50  "
+  class=" js-section relative  md:h-fit h-fit p-20 bg-opacity-50  "
 >
   <div class="w-full h-full overflow-hidden md:p-4 md:pr-4  p-2 flex items-center justify-center">
-    {{ section.settings.image | image_url: width: 1204 | image_tag: class: ' w-80 object-cover  js-fade aspect-main ' }}
+    {{
+      section.settings.image
+      | image_url: width: 1204
+      | image_tag: class: ' w-[500px] object-cover  js-fade aspect-main '
+    }}
   </div>
 </div>
 
