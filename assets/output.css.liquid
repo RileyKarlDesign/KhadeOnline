@@ -1219,10 +1219,6 @@ video {
   width: auto;
 }
 
-.w-base {
-  width: 423.875px;
-}
-
 .w-fit {
   width: -moz-fit-content;
   width: fit-content;
@@ -1234,6 +1230,26 @@ video {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-\[50px\] {
+  width: 50px;
+}
+
+.w-\[30px\] {
+  width: 30px;
+}
+
+.w-\[20px\] {
+  width: 20px;
+}
+
+.w-\[25px\] {
+  width: 25px;
+}
+
+.w-\[28px\] {
+  width: 28px;
 }
 
 .flex-shrink {
@@ -1654,17 +1670,12 @@ video {
 }
 
 .border-stroke-1 {
-  border-color: #796a59ff;
+  border-color: #796a59c6;
 }
 
 .border-test {
   --tw-border-opacity: 1;
   border-color: rgb(255 179 0 / var(--tw-border-opacity));
-}
-
-.border-type-1 {
-  --tw-border-opacity: 1;
-  border-color: rgb(64 49 40 / var(--tw-border-opacity));
 }
 
 .border-yellow-500 {
@@ -1902,27 +1913,9 @@ video {
   background-color: rgb(28 25 23 / var(--tw-bg-opacity));
 }
 
-.bg-stroke-1 {
-  background-color: #796a59ff;
-}
-
-.bg-surface-1 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(246 243 237 / var(--tw-bg-opacity));
-}
-
 .bg-surface-2 {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-surface-3 {
-  background-color: #4b4b4b05;
-}
-
-.bg-test {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 179 0 / var(--tw-bg-opacity));
 }
 
 .bg-transparent {
@@ -2843,11 +2836,18 @@ input{
 }
 
 @media (max-width: 767px) {
-  h1{
+  h1 {
     font-family: 'SangBlu', serif ;
-    line-height: 4.8rem;
-    font-size: 2.3rem;
-    letter-spacing: 2px;
+    line-height: 2rem;
+    font-size: 1.7rem;
+    letter-spacing: 0px;
+  }
+
+  h2 {
+    font-family: 'SangBlu', serif ;
+    line-height: 1.3rem;
+    font-size: 1.4rem;
+    letter-spacing: 0px;
   }
 }
 
@@ -3410,6 +3410,10 @@ label {
     width: 100%;
   }
 
+  .sm\:w-\[80vw\] {
+    width: 80vw;
+  }
+
   .sm\:grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
@@ -3428,6 +3432,10 @@ label {
 
   .sm\:justify-end {
     justify-content: flex-end;
+  }
+
+  .sm\:pt-14 {
+    padding-top: 3.5rem;
   }
 }
 
@@ -3501,6 +3509,14 @@ label {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .md\:grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
   .md\:flex-row {
     flex-direction: row;
   }
@@ -3561,6 +3577,10 @@ label {
     padding-top: 70px;
   }
 
+  .md\:pt-20 {
+    padding-top: 5rem;
+  }
+
   .md\:text-5xl {
     font-size: 3rem;
     line-height: 1;
@@ -3586,5 +3606,9 @@ label {
 
   .lg\:w-\[50vw\] {
     width: 50vw;
+  }
+
+  .lg\:grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }
