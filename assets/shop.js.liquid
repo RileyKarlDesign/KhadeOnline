@@ -89,6 +89,7 @@ menuBtn.addEventListener('click', handelMenu)
   let cart = document.querySelector(".my-cart");
   let bodyWrap = document.querySelector(".js-main");
   let cartBtns = document.querySelectorAll(".cart-btn");
+  let cartBg = document.querySelector(".js-cart-bg");
   let cartState = false;
 
   let winHeight = window.innerHeight;
@@ -105,10 +106,14 @@ menuBtn.addEventListener('click', handelMenu)
     cart.classList.remove("cart-open");
     bodyWrap.style.opacity = "1 ";
     cartState = false;
+    cartBg.style.pointerEvents = "none";
+    cartBg.classList.remove("js-cart-bg-active");
   };
 
   let openCart = () => {
+    cartBg.classList.add("js-cart-bg-active");
     cart.classList.add("cart-open");
+    cartBg.style.pointerEvents = "auto";
     bodyWrap.style.opacity = "0.5 ";
     cartState = true;
     closeMenu()

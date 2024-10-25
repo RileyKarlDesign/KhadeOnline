@@ -18,6 +18,9 @@
 
 :root {
   --winHeight: 100vh;
+  --bgbg: rgba(63, 38, 28, 0.78) ;
+  --bgBlur: 10px;
+  --transTime: .4s;
 }
 
 
@@ -240,13 +243,15 @@ input[type=number] {
   height: 100%;
   overflow: hidden;
   pointer-events: none;
-  transition: ease all 1s;
+  
+  transition: ease all var(--transTime) ;
 }
 
 .menu-card{ 
   
   border-radius:0;
-  transition: ease all 0.2s;
+
+  transition: ease all var(--transTime) ;
 }
 .menu-card .links{
 /* opacity: 0; */
@@ -255,7 +260,8 @@ input[type=number] {
 .menu-content{  
 
 
-  transition: cubic-bezier(.87,0,1,1) all 0.2s;
+  /* transition: cubic-bezier(.87,0,1,1) all 0.2s; */
+  transition: ease all var(--transTime) ;
   
   
 }
@@ -282,14 +288,15 @@ opacity: 100;
   
   right: 50%;
 
-  transition: ease all 0.1s;
+  transition: ease all var(--transTime);
   /* background: #ffffff; */
 }
 
 .menu-open{
- backdrop-filter: blur(2px);
- background-color: rgba(70, 39, 50, 0.77) ;
- transition: ease all 0.1s;
+ 
+ background-color: var(--bgbg) !important;
+  backdrop-filter:blur(--bgBlur)!important;
+ transition: ease all var(--transTime);
  pointer-events: all !important;
 }
 
@@ -322,9 +329,22 @@ opacity: 100;
 
 
 
-.dim .js-main {
-  opacity: .4 !important;
+.dim .js-cart-bg {
+  /* opacity: .4 !important; */
+  /* background-color: red !important; */
+  transition: ease all var(--transTime) ;
+}
 
+ .js-cart-bg  {
+  /* opacity: .4 !important; */
+  /* background-color: red !important; */
+}
+
+ .js-cart-bg-active {
+  /* opacity: .4 !important; */
+  background-color: var(--bgbg) !important;
+  backdrop-filter:blur(--bgBlur)!important;
+  transition: ease all var(--transTime) ;
 }
 
 .my-cart{
@@ -335,9 +355,9 @@ opacity: 100;
   cursor: pointer;
   width: calc( 450px);
   height: calc(var(--winHeight) );
-  transition: ease all 0.3s ;
+  transition: ease all var(--transTime) ;
   overflow: hidden;
-  opacity: 0;
+ 
  
 }
 
@@ -346,7 +366,7 @@ opacity: 100;
 .cart-open{
 
   overflow: scroll;
-  transition: right 0.3s;
+  transition: ease all var(--transTime) ;
   right: 0px;
   bottom: 0;
   opacity: 1; 
@@ -367,7 +387,8 @@ opacity: 100;
     width: calc( 100vw  );
     height: calc(var(--winHeight) );
     overflow: hidden;
-    transition: top 0.3s;
+    /* transition: top 0.3s; */
+    transition: ease all var(--transTime) ;
    
   }
 
@@ -375,10 +396,10 @@ opacity: 100;
   .cart-open{
 
     width: calc( 100vw  );
-    height: calc(var(--winHeight) - 20px );
+    height: calc(var(--winHeight) / 2 );
     overflow: scroll;
     right: 0px;
-    top: 20px;
+    top: 50%;
  
   }
 }

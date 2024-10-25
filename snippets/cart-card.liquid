@@ -1,14 +1,14 @@
-<div class="flex  gap-2 items-center relative  mb-1 bg-white ">
+<div class="flex  gap-1 items-center relative  mb-1 bg-surface-3 rounded-sm overflow-hidden border-[1px] border-text ">
   {% comment %}  Image {% endcomment %}
   <a href="{{ product.url }}" class="w-1/6">
-    <div class="featuredProductImage h-fit rounded-sm overflow-hidden  ">
+    <div class="featuredProductImage h-fit  overflow-hidden  ">
       {{ product.image | image_url: width: 700 | image_tag }}
     </div>
 
     <!-- Item error messages -->
-    <div class="w-full p-2  absolute bottom-0 left-0 right-0">
+    <div class="w-full p-1  absolute bottom-0 left-0 right-0">
       <div
-        class=" caption bg-orange-400 flex justify-center items-center rounded-md z-30  "
+        class=" caption bg-orange-400 flex  items-center rounded-md z-30  "
         data-ajax-cart-errors="{{ product.key }}"
       ></div>
     </div>
@@ -17,6 +17,11 @@
   <div class=" flex flex-col justify-between w-full  ">
     <div class="title">
       <p>{{ product.title }}</p>
+
+      {% for e in product.variants %}
+        <p>{{ e.title }}</p>
+      {% endfor %}
+
       <p class=" ">{{ product.price | money }}</p>
     </div>
 

@@ -1,9 +1,22 @@
 <div class=" HEADER  h-fit z-50 fixed inset-x-0 top-0 pointer-events-none ">
-  <div class=" menu-link w-full flex items-center justify-between  px-2 md:h-16 h-10 pb-0 z-50 ">
+  <div class=" menu-link w-full flex items-center justify-between  px-2 md:h-16 h-14 pb-0 z-50 ">
     <div class=" flex h-fit w-fit ">
       <h3 class=" hover:opacity-50 menu-btn cursor-pointer hightlight select-none w-[70px] h-fit pointer-events-auto  ">
         Menu
       </h3>
+
+      {%- for link in linklists['main-menu'].links -%}
+        <div class="link-box flex justify-center items-center lg:h-full md:h-fit ">
+          <h3 class=" select-none  ">
+            <a
+              class=" hover:opacity-50  {%- if request.path == link.url -%}f opacity-50 hover:opacity-50 {%- endif -%}"
+              href="{{ link.url }}"
+            >
+              {{- link.title -}}
+            </a>
+          </h3>
+        </div>
+      {%- endfor -%}
     </div>
 
     {% comment %} {% render 'lotus' %} {% endcomment %}

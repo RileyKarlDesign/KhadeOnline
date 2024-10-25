@@ -17,11 +17,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'surface-1': "#FBF9F5",
-        'surface-2': "#FFFFFF",
+        'surface-1': "#f6f3ed",
+        'surface-2': "#ffffff",
+        'surface-3': "#4b4b4b05",
         'type-1': "#403128",
         'type-2': "#403128",
         'stroke-1': "#796A59",
+        'stroke-2': "#403128",
         'test': "#ffb300",
       },
 
