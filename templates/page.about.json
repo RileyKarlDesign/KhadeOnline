@@ -14,6 +14,13 @@
       "settings": {
       }
     },
+    "block_portrait_image_Lzqij7": {
+      "type": "Block-portrait-Image",
+      "settings": {
+        "image": "shopify://shop_images/IMG_2263.heic",
+        "color": ""
+      }
+    },
     "full_width_image_BUT8fw": {
       "type": "full-width-image",
       "settings": {
@@ -30,6 +37,7 @@
   },
   "order": [
     "main",
+    "block_portrait_image_Lzqij7",
     "full_width_image_BUT8fw",
     "form"
   ]
