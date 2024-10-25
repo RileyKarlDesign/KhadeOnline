@@ -1183,12 +1183,12 @@ video {
   width: 24rem;
 }
 
-.w-\[200px\] {
-  width: 200px;
-}
-
 .w-\[250px\] {
   width: 250px;
+}
+
+.w-\[28px\] {
+  width: 28px;
 }
 
 .w-\[300px\] {
@@ -1230,26 +1230,6 @@ video {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-\[50px\] {
-  width: 50px;
-}
-
-.w-\[30px\] {
-  width: 30px;
-}
-
-.w-\[20px\] {
-  width: 20px;
-}
-
-.w-\[25px\] {
-  width: 25px;
-}
-
-.w-\[28px\] {
-  width: 28px;
 }
 
 .flex-shrink {
@@ -3390,10 +3370,6 @@ label {
 }
 
 @media (min-width: 640px) {
-  .sm\:flex {
-    display: flex;
-  }
-
   .sm\:grid {
     display: grid;
   }
@@ -3406,12 +3382,12 @@ label {
     height: 100%;
   }
 
-  .sm\:w-full {
-    width: 100%;
-  }
-
   .sm\:w-\[80vw\] {
     width: 80vw;
+  }
+
+  .sm\:w-full {
+    width: 100%;
   }
 
   .sm\:grid-cols-1 {
@@ -3424,14 +3400,6 @@ label {
 
   .sm\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .sm\:flex-col {
-    flex-direction: column;
-  }
-
-  .sm\:justify-end {
-    justify-content: flex-end;
   }
 
   .sm\:pt-14 {
@@ -3509,10 +3477,6 @@ label {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .md\:grid-cols-5 {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-  }
-
   .md\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
@@ -3569,16 +3533,16 @@ label {
     padding-top: 25px;
   }
 
+  .md\:pt-20 {
+    padding-top: 5rem;
+  }
+
   .md\:pt-4 {
     padding-top: 40px;
   }
 
   .md\:pt-\[70px\] {
     padding-top: 70px;
-  }
-
-  .md\:pt-20 {
-    padding-top: 5rem;
   }
 
   .md\:text-5xl {
