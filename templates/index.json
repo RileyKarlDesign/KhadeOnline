@@ -41,7 +41,7 @@
         "image1": "shopify://shop_images/DSC03318.jpg",
         "image2": "shopify://shop_images/DSC03320.jpg",
         "product_1": "prouduct-one",
-        "reverse": true
+        "reverse": false
       }
     },
     "block_portrait_image_b8beBT": {
