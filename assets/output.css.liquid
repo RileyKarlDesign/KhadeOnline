@@ -865,14 +865,14 @@ video {
   margin: 0px;
 }
 
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .mx-1 {
   margin-left: 15px;
   margin-right: 15px;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .my-1 {
@@ -1633,10 +1633,6 @@ video {
   border-top-width: 1px;
 }
 
-.border-b-\[1px\] {
-  border-bottom-width: 1px;
-}
-
 .border-none {
   border-style: none;
 }
@@ -1661,6 +1657,11 @@ video {
   border-color: rgb(55 48 163 / var(--tw-border-opacity));
 }
 
+.border-orange-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(251 146 60 / var(--tw-border-opacity));
+}
+
 .border-red-500 {
   --tw-border-opacity: 1;
   border-color: rgb(239 68 68 / var(--tw-border-opacity));
@@ -1683,11 +1684,6 @@ video {
 .border-yellow-500 {
   --tw-border-opacity: 1;
   border-color: rgb(234 179 8 / var(--tw-border-opacity));
-}
-
-.border-orange-400 {
-  --tw-border-opacity: 1;
-  border-color: rgb(251 146 60 / var(--tw-border-opacity));
 }
 
 .border-opacity-25 {
@@ -2614,12 +2610,20 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-opacity-20 {
+  --tw-text-opacity: 0.2;
+}
+
 .text-opacity-30 {
   --tw-text-opacity: 0.3;
 }
 
 .text-opacity-45 {
   --tw-text-opacity: 0.45;
+}
+
+.text-opacity-50 {
+  --tw-text-opacity: 0.5;
 }
 
 .text-opacity-70 {
@@ -2632,14 +2636,6 @@ video {
 
 .text-opacity-90 {
   --tw-text-opacity: 0.9;
-}
-
-.text-opacity-50 {
-  --tw-text-opacity: 0.5;
-}
-
-.text-opacity-20 {
-  --tw-text-opacity: 0.2;
 }
 
 .underline {
@@ -3190,10 +3186,10 @@ input[type=number] {
 
   .cart-open{
     width: calc( 100vw  );
-    height: calc(var(--winHeight) / 2 );
+    height: calc(var(--winHeight) / 10 * 7  );
     overflow: scroll;
     right: 0px;
-    top: 50%;
+    top:30%;
   }
 }
 
@@ -3637,24 +3633,16 @@ label {
     padding-top: 40px;
   }
 
+  .md\:pt-\[12px\] {
+    padding-top: 12px;
+  }
+
   .md\:pt-\[5px\] {
     padding-top: 5px;
   }
 
   .md\:pt-\[70px\] {
     padding-top: 70px;
-  }
-
-  .md\:pt-1 {
-    padding-top: 15px;
-  }
-
-  .md\:pt-\[10px\] {
-    padding-top: 10px;
-  }
-
-  .md\:pt-\[12px\] {
-    padding-top: 12px;
   }
 }
 
