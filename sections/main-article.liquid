@@ -1,3 +1,13 @@
-<h2>{{ article.title }}</h2>
-<p>{{ article.published_at | date: '%d %B %Y' }}</p>
-{{ article.content }}
+<div class="p-2">
+  <div
+    class="
+      title
+      md:border-5-[1px] md:border-stroke-1 pt-[5px] subheader-title border
+    "
+  >
+    <h2 class="pt-40">{{ article.title }}</h2>
+    {% comment %} <p>{{ article.published_at | date: '%d %B %Y' }}</p> {% endcomment %}
+  </div>
+
+  {{ article.content }}
+</div>
