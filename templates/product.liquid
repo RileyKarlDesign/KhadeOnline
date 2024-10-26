@@ -16,6 +16,9 @@
       <div class="">
         <div class="pb-[10px] pt-1 ">
           {{ product.description }}
+          {% if product.metafields.custom.materials != '' %}
+            {% render 'preorder' with { content: product.metafields.custom.pre_order } %}
+          {% endif %}
         </div>
 
         <ajax-cart-product-form>
@@ -24,15 +27,13 @@
         <div class="flex flex-col gap-1  ">
           <div class="js-product-description flex-col flex gap-0">
             {% if product.metafields.custom.materials != '' %}
-              {% render 'accordian' with { title: 'Materials', content: product.metafields.custom.shipping } %}
+              {% render 'accordian' with { title: 'Materials', content: product.metafields.custom.materials } %}
             {% endif %}
             {% if product.metafields.custom.sizing != '' %}
               {% render 'accordian' with { title: 'Sizing', content: product.metafields.custom.size } %}
             {% endif %}
-            {% if product.metafields.custom.pre_order != '' %}
-              {% render 'accordian' with { title: 'Pre-Order', content: product.metafields.custom.size } %}
-            {% endif %}
           </div>
+
           {% render 'atc-stick' %}
         </div>
       </div>
