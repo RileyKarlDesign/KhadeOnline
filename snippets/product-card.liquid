@@ -14,21 +14,36 @@
           {% endif %}
         </div>
       {% endcomment %}
+      <div class="img-wrap relativ ">
+        <div class=" absolute top-2 right-2 z-40 w-fit bg-surface-1 ">
+          {% if product.metafields.custom.pre_order %}
+            {% render 'preorder-sym' %}
+          {% endif %}
 
-      <div class=" pointer-events-none  w-full  ">
-        {{ product.images[0] | image_url: width: 700 | image_tag: class: 'js-fade h-full w-full  aspect-main ' }}
-      </div>
+          {% if collection.all_products_count > 0 and collection.all_products_count <= 2 %}
+            {% render 'lowstock-sym' %}
+          {% endif %}
+        </div>
 
-      <div class=" pointer-events-none absolute inset-0 opacity-0 w-full group-hover:opacity-100 ">
-        {{ product.images[1] | image_url: width: 700 | image_tag: class: 'js-fade h-full w-full ' }}
+        <div class=" pointer-events-none  w-full  ">
+          {% if product.metafields.custom.pre_order %}
+          {% endif %}
+          {{ product.images[0] | image_url: width: 700 | image_tag: class: 'js-fade h-full w-full  aspect-main ' }}
+        </div>
+        <div class=" pointer-events-none absolute inset-0 opacity-0 w-full group-hover:opacity-100 ">
+          {{ product.images[1] | image_url: width: 700 | image_tag: class: 'js-fade h-full w-full ' }}
+        </div>
       </div>
     </div>
-    <div class=" pt-1 pointer-events-none  flex flex-col  ">
-      <p>{{ product.title }}</p>
 
-      <div class="flex flex-col gap-2">
-        <p class=" ">{{ product.price | money }}</p>
-        <p class="  ">{{ product.compare_at_price | money_with_currency }}</p>
+    <div class=" pt-1 pointer-events-none  flex justify-between   ">
+      <div class="info">
+        <p>{{ product.title }}</p>
+
+        <div class="flex flex-col gap-2">
+          <p class=" ">{{ product.price | money }}</p>
+          <p class="  ">{{ product.compare_at_price | money_with_currency }}</p>
+        </div>
       </div>
     </div>
   </a>

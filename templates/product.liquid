@@ -1,11 +1,11 @@
 <div class="flex sm:flex-row flex-col">
-  <div class=" relative  flex sm:w-1/2 w-full   h-screen  ">
+  <div class=" relative  flex sm:w-1/2 w-full  md:pt-0 pt-3 md:h-screen h-[70vh] ">
     {% render 'swiper' with { product: product } %}
   </div>
 
   <div class="  w-1/2  md:flex justify-start items-start md:p-2 md:pt-[12px] p-1  h-screen ">
     <div class="  ALL INFO w-[250px] ">
-      <div class="js-back mb-2 hover:opacity-30 cursor-pointer">
+      <div class="js-back text-link mb-2 hover:opacity-30 cursor-pointer">
         <p class="pointer-events-none">Back</p>
       </div>
 
@@ -16,7 +16,8 @@
       <div class="">
         <div class="pb-[10px] pt-1 ">
           {{ product.description }}
-          {% if product.metafields.custom.pre_order %}
+          {% if product.metafields.custom.pre_order -%}
+            ah
             {% render 'preorder' with { content: product.metafields.custom.pre_order } %}
           {% endif %}
         </div>

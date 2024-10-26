@@ -6,16 +6,16 @@
 >
   <div
     class="
-      mt-40
-      title
-      md:border-t-[1px] md:border-stroke-1 pt-[5px] subheader-title
+      md:sticky md:top-0
+      pt-40 title h-fit
+      subheader-title
     "
   >
-    <p class="pt-[5px]">{{ article.title }}</p>
-    <p>{{ article.published_at | date: '%d %B %Y' }}</p>
+    <p class="pt-[5px] md:border-t-[1px] md:border-stroke-1">{{ article.title }}</p>
+    <p class="opacity-50">{{ article.published_at | date: '%d %B %Y' }}</p>
   </div>
 
-  <div class="content w-[350px]">
+  <div class="blog-content w-[350px] md:border-t-[1px] md:border-stroke-1  mt-40  :border-t-[1px] :border-stroke-1 pt-[5px]  ">
     {{ article.content }}
   </div>
 </div>
