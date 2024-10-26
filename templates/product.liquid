@@ -3,7 +3,7 @@
     {% render 'swiper' with { product: product } %}
   </div>
 
-  <div class="  w-1/2  md:flex justify-start items-start md:p-2 p-2  h-screen ">
+  <div class="  w-1/2  md:flex justify-start items-start md:p-2 md:pt-[12px] p-1  h-screen ">
     <div class="  ALL INFO w-[250px] ">
       <div class="js-back mb-2 hover:opacity-30 cursor-pointer">
         <p class="pointer-events-none">Back</p>
@@ -16,7 +16,7 @@
       <div class="">
         <div class="pb-[10px] pt-1 ">
           {{ product.description }}
-          {% if product.metafields.custom.materials != '' %}
+          {% if product.metafields.custom.pre_order %}
             {% render 'preorder' with { content: product.metafields.custom.pre_order } %}
           {% endif %}
         </div>
