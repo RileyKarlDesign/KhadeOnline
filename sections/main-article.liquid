@@ -1,13 +1,21 @@
-<div class="p-2">
+<div
+  class="
+    md:flex-row md:gap-1
+    flex-col flex p-2
+  "
+>
   <div
     class="
+      mt-40
       title
-      md:border-5-[1px] md:border-stroke-1 pt-[5px] subheader-title border
+      md:border-t-[1px] md:border-stroke-1 pt-[5px] subheader-title
     "
   >
-    <h2 class="pt-40">{{ article.title }}</h2>
-    {% comment %} <p>{{ article.published_at | date: '%d %B %Y' }}</p> {% endcomment %}
+    <p class="pt-[5px]">{{ article.title }}</p>
+    <p>{{ article.published_at | date: '%d %B %Y' }}</p>
   </div>
 
-  {{ article.content }}
+  <div class="content w-[350px]">
+    {{ article.content }}
+  </div>
 </div>
