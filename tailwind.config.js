@@ -22,7 +22,7 @@ module.exports = {
         'surface-3': "#4b4b4b05",
         'type-1': "#403128",
         'type-2': "#403128",
-        'preorder': "#8b9b7b91",
+        'preorder': "#c81c69ff",
         'lowstock': "#a01d40ad",
         'stroke-1': "#796a59c6",
         'stroke-2': "#403128",

@@ -1,35 +1,39 @@
-<div class="js-cart-bg cart-btn  bg-opacity-25 fixed top-0 right-0 left-0 bottom-0 pointer-events-none  z-[2000] ">
-  <div class="my-cart bg-surface-2  z-[2000]  backdrop-blur-lg relative md:w-[50vw] sm:w-full w-full  ">
-    <div class=" header h-header-1   select-none absolute top-0 right-0 left-0 flex w-full z-50  justify-between items-center px-2  ">
-      <h3>
-        Cart (
-        <span data-ajax-cart-bind="item_count" class="header__cart-quantity">
-          {{ cart.item_count }}
-        </span>
-        )
-      </h3>
-      <h3 class="cart-btn md:pr-[10px]">Close</h3>
-    </div>
+<div
+  class="js-cart-bg cart-btn  bg-opacity-25 fixed top-0 right-0 left-0 bottom-0 pointer-events-none  z-[2000] "
+></div>
 
-    <div class="  overflow-y-scroll h-full  md:pt-[70px] pt-[70px]  md:p-2 p-2" data-ajax-cart-section>
-      <div class="my-cart__items " data-ajax-cart-section-scroll>
-        {% for line_item in cart.items %}
-          {% render 'cart-card' with { product: line_item , index: forloop.index } %}
-        {% endfor %}
-      </div>
-    </div>
+<div class="my-cart bg-surface-2  z-[2000]  backdrop-blur-lg relative md:w-[50vw] sm:w-full w-full ">
+  <div class=" header md:h-16 h-1 select-none absolute top-0 right-0 left-0 flex w-full z-50  justify-between items-end md:p-2 p-1 ">
+    <h3>
+      Cart (
+      <span data-ajax-cart-bind="item_count" class="header__cart-quantity">
+        {{ cart.item_count }}
+      </span>
+      )
+    </h3>
 
-    <div class=" cart-footer flex gap-2 justify-center align-middle absolute left-0 right-0 bottom-2    w-full ">
-      {% form 'cart', cart, id: 'my-ajax-cart-form' %}
-        <button
-          class=" px-20 flex w-full h-el justify-center items-center bg-black bg-opacity-80 text-white hover:bg-opacity-5 hover:text-black rounded-sm  backdrop-blur-lg "
-          type="submit"
-          name="checkout"
-        >
-          <h3>Checkout</h3>
-        </button>
-      {% endform %}
+    <p>v1</p>
+    <h3 class="cart-btn md:pr-[10px]">Close</h3>
+  </div>
+
+  <div class="  overflow-y-scroll h-full  md:pt-[70px] pt-[70px]  md:p-2 p-1" data-ajax-cart-section>
+    <div class="my-cart__items " data-ajax-cart-section-scroll>
+      {% for line_item in cart.items %}
+        {% render 'cart-card' with { product: line_item , index: forloop.index } %}
+      {% endfor %}
     </div>
+  </div>
+
+  <div class=" cart-footer flex gap-2 justify-center align-middle absolute left-0 right-0 bottom-2    w-full ">
+    {% form 'cart', cart, id: 'my-ajax-cart-form' %}
+      <button
+        class=" px-20 flex w-full h-el justify-center items-center bg-black bg-opacity-80 text-white hover:bg-opacity-5 hover:text-black rounded-sm  backdrop-blur-lg "
+        type="submit"
+        name="checkout"
+      >
+        <h3>Checkout</h3>
+      </button>
+    {% endform %}
   </div>
 </div>
 

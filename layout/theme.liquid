@@ -89,7 +89,7 @@
 
     {% comment %}  styles for body wrap are in css due tw error {% endcomment %}
     {% render 'header' %}
-    {% section 'live-cart' %}
+    {% section 'live-cart-v2' %}
     {% if template != 'product' %}
       {% if template != 'page.about' %}
         {% if template != 'page.info' %}
@@ -110,7 +110,7 @@
         {% render 'footer' %}
       </div>
 
-      {% render 'cookies' %}
+      {% comment %} {% render 'cookies' %} {% endcomment %}
     </div>
 
     {% comment %} Somewhere in layout/theme.liquid {% endcomment %}
@@ -120,15 +120,8 @@
     </script>
 
     <script type="module">
-      import '{{ "liquid-ajax-cart-v2.1.0.js" | asset_url }}';
+      import '{{ "liquid-ajax-cart-v2.1.1.js" | asset_url }}';
     </script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.18/paper-full.min.js"
-      integrity="sha512-qaPSGmKTwpu5ChwJ6AD3w7ecS3yM7pFC1cS3IfnjPM67dhXoymEomk1wqiZEHUFO4dQO1bhjo8LYImVDSDfR1g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-      defer
-    ></script>
 
     <script src="{{ 'shop.js' | asset_url }}" defer></script>
     <script src="{{ 'scroll.js' | asset_url }}" defer></script>
@@ -136,6 +129,6 @@
     <script src="{{ 'cart.js' | asset_url }}" defer></script>
     <script src="{{ 'gallery.js' | asset_url }}" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
-    <script src="{{ 'cookieconsent-config.js' | asset_url }}" type="module" defer></script>
+    {% comment %} <script src="{{ 'cookieconsent-config.js' | asset_url }}" type="module" defer></script> {% endcomment %}
   </body>
 </html>

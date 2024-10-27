@@ -1,4 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+function runWhenInit() {
+  console.log("The current cart state is: ", window.liquidAjaxCart.cart);
+}
+
+if (window.liquidAjaxCart?.init) {
+  // if Liquid Ajax Cart is already initialized
+  runWhenInit();
+} else {
+  // wait for Liquid Ajax Cart to be initialized
+  document.addEventListener("liquid-ajax-cart:init", runWhenInit);
+}
+
   let addToCartFormSelector = "#add-to-cart-form",
     productOptionsSelector = addToCartFormSelector + " [name*=option]";
 
@@ -129,8 +142,6 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentCount = 1;
 
   let add = () => {
-
-   
     let max = quantity.dataset.max;
     if (currentCount < max) {
       currentCount += 1;
@@ -140,8 +151,6 @@ document.addEventListener("DOMContentLoaded", function () {
       quantityHidden.value = currentCount;
     
     }
-
-
   };
 
   let reduce = () => {
@@ -182,7 +191,7 @@ document.addEventListener("liquid-ajax-cart:request-end", (event) => {
   // If the "add to cart" request is successful
   if (requestState.requestType === "add" && requestState.responseData?.ok) {
     // Add the CSS class to the "body" tag
-    document.body.classList.add("js-show-ajax-cart");
+   
   }
 });
 

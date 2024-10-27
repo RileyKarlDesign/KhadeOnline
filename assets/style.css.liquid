@@ -18,8 +18,9 @@
 
 :root {
   --winHeight: 100vh;
-  --bgbg: rgba(63, 38, 28, 0.78) ;
-  --bgBlur: 2px;
+  --bgbg: rgba(30, 13, 2, 0.73);
+  --bgbgnull: rgba(30, 13, 2, 0);
+  --bgBlur: 90px;
   --transTime: .4s;
 }
 
@@ -28,7 +29,8 @@
 }
 
 .text-link:hover{
-  /* color: red; */
+  color: red;
+  opacity: 1 !important;
   cursor: pointer ;
 }
 
@@ -367,6 +369,8 @@ opacity: 100;
  .js-cart-bg  {
   /* opacity: .4 !important; */
   /* background-color: red !important; */
+  background-color: var(--bgbgnull) !important;
+  transition: eass all 0.3;
 }
 
  .js-cart-bg-active {
@@ -376,18 +380,18 @@ opacity: 100;
   transition: ease all var(--transTime) ;
 }
 
-.my-cart{
+.cart-wrap{
   position: fixed;
-  right: -1000px;
-  top: 0;
+  right: 0;
+  top: 100%;
   bottom: 0;
   cursor: pointer;
-  width: calc( 450px);
+  
   height: calc(var(--winHeight) );
   transition: ease all var(--transTime) ;
   overflow: hidden;
- 
- 
+  opacity: 0; 
+  transition: opacity all 0.1 ;
 }
 
 
@@ -397,8 +401,10 @@ opacity: 100;
   overflow: scroll;
   transition: ease all var(--transTime) ;
   right: 0px;
+   top: 20%;
   bottom: 0;
   opacity: 1; 
+
 
 
  
@@ -427,6 +433,7 @@ opacity: 100;
     width: calc( 100vw  );
     height: calc(var(--winHeight) / 10 * 7  );
     overflow: scroll;
+    pointer-events: auto !important;
     right: 0px;
     top:30%;
  
@@ -464,7 +471,7 @@ html.js-ajax-cart-processing .my-cart__items {
 
 /* Show a loading indicator */
 html.js-ajax-cart-processing .my-cart__items:before {
-  content: 'LOADING';
+  /* content: 'LOADING'; */
  position: absolute;
   inset:0px;
   display: flex;
@@ -472,7 +479,7 @@ html.js-ajax-cart-processing .my-cart__items:before {
   align-items: center;
   
   padding: 10px 20px;
-  background-color: rgba(251, 255, 0, 0.6);
+  background-color: rgba(183, 173, 157, 0.67);
   margin: 0 auto;
 
   inset: 0;

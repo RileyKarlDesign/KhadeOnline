@@ -1,33 +1,30 @@
-{% if cart.item_count > 0 %}
-<form action="/cart" method="post" id="cart" class="cart ">
-    <table>
-        <tr>
-            <th class="item desc"></th>
-            <th class="item price">Price</th>
-            <th class="item qty">Quantity</th>
-            <th class="item remove">Delete</th>
-            <th class="item total">Total</th>
-        </tr>
-        {% for item in cart.items %}
-        <tr id="cart-item-{{ item.variant.id }}" class="cart-item">
-            <td class="item desc"><a href="/collections/{{ item.product.collections.first.title | downcase }}#{{ item.product.handle }}">{{ item.title }}</a></td>
-            <td class="item price">{{ item.price | money }}</td>
-            <td class="item qty"><input type="text" size="4" pattern="[0-9]*" name="updates[{{ item.variant.id }}]" id="quantity-{{ item.variant.id }}" class="quantity" value="{{ item.quantity }}" min="1" onfocus="this.select();"/></td>
-            <td class="item remove"><a href="/cart/change/{{ item.variant.id }}?quantity=0">Remove</a></td>
-            <td class="item price">{{ item.line_price | money }}</td>
-        </tr>
-        {% endfor %}
-        <tr class="subtotal">
-            <td colspan="5">Total: <strong>{{ cart.total_price | money }}</strong></td>
-        </tr>
-        <tr class="actions">
-            <td colspan="5">
-                <input class="button" type="submit" id="update-cart" name="update" value="Update"  />
-                <input class="button" type="submit" name="checkout" value="Checkout" />
-            </td>
-        </tr>
-    </table>
-</form>
-{% else %}
-<p>Your cart is empty!</p>
-{% endif %}
+<div class=" md:flex gap-1 p-2 ">
+  <div class="pt-40 sticky top-0">
+    <div class="subheader-title border-t-[1px] border-stroke-1">
+      <p>Cart</p>
+    </div>
+  </div>
+
+  <div class=" mt-40 w-[350px] ">
+    {% if cart.item_count > 0 %}
+      {% for item in cart.items %}
+        {% render 'cart-card' with {product: item} %}
+      {% endfor %}
+      <tr class="subtotal">
+        <div colspan="5">
+          Total: <strong>{{ cart.total_price | money }}</strong>
+        </div>
+      </tr>
+      <tr class="actions">
+        <div colspan="5">
+          <input class="button" type="submit" id="update-cart" name="update" value="Update">
+          <input class="button" type="submit" name="checkout" value="Checkout">
+        </div>
+      </tr>
+      </div>
+      </form>
+    {% else %}
+      <p>Your cart is empty!</p>
+    {% endif %}
+  </div>
+</div>

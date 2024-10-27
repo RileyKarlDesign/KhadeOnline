@@ -4,7 +4,7 @@
       {%- for link in linklists.info.links -%}
         <h3 class=" select-none  ">
           <a
-            class=" hover:opacity-50 {%- if request.path == link.url -%}f opacity-50 hover:opacity-50 {%- endif -%}"
+            class="  {%- if request.path == link.url -%}f opacity-50 hover:opacity-50 {%- endif -%}"
             href="{{ link.url }}"
           >
             {{- link.title -}}

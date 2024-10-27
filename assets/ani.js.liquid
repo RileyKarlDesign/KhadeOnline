@@ -5,6 +5,10 @@ console.log('ani 1.O')
 
 document.addEventListener("DOMContentLoaded", (event) => {
 
+  document.addEventListener("liquid-ajax-cart:request-end", function(event) {
+  const {sections} = event.detail;
+  console.log("Sections are re-rendered: ", sections);
+});
 
 let menuOpen = false
 let menuBtn = document.querySelector('.menu-btn')
@@ -63,24 +67,24 @@ gsap.to(mixedStiches, {opacity:1, duration:0.002, x:0, stagger:0.002})
 
   // link dealy
 
-  let links = document.querySelectorAll("a");
+  // let links = document.querySelectorAll("a");
 
-  for (let i = 0; i < links.length; i++) {
+  // for (let i = 0; i < links.length; i++) {
 
 
-    links[i].addEventListener("click", (e) => {
-      e.preventDefault();
-      closeMenu();
-      gsap.to('.js-main', { opacity: 0, duration: .3 });
-      gsap.to(mixedStiches, {opacity:0, duration:0.003, x:0, stagger:0.003})
-      console.log(e.target.href)
-      setTimeout(() => {
-        // console.log(e.target.href)
-        window.location.href = e.target.href;
-      }, 20) 
-    })
+  //   links[i].addEventListener("click", (e) => {
+  //     e.preventDefault();
+  //     closeMenu();
+  //     gsap.to('.js-main', { opacity: 0, duration: .3 });
+  //     gsap.to(mixedStiches, {opacity:0, duration:0.003, x:0, stagger:0.003})
+  //     console.log(e.target.href)
+  //     setTimeout(() => {
+  //       console.log(e.target.href)
+  //       window.location.href = e.target.href;
+  //     }, 20) 
+  //   })
 
-  }
+  // }
 
   // image-ani 
 

@@ -7,14 +7,14 @@
         </div>
       </div>
       <div class=" flex gap-1 h-fit w-fit ">
-        <h3 class=" hover:opacity-50 menu-btn cursor-pointer hightlight select-none  h-fit pointer-events-auto  ">
+        <h3 class=" text-link hover:opacity-50 menu-btn cursor-pointer hightlight select-none  h-fit pointer-events-auto  ">
           Menu
         </h3>
         {%- for link in linklists.header.links -%}
           <div class="text-link flex justify-center items-center lg:h-full md:h-fit w-[40px] pointer-events-auto ">
             <h3 class=" select-none  ">
               <a
-                class=" hover:opacity-50  {%- if request.path == link.url -%}f opacity-50 hover:opacity-50 {%- endif -%}"
+                class="   {%- if request.path == link.url -%}f opacity-50 hover:opacity-50 {%- endif -%}"
                 href="{{ link.url }}"
               >
                 {{- link.title -}}
@@ -26,7 +26,7 @@
     </div>
 
     <div class="cart-btn cursor-pointer  w-fit rounded-full select-none pointer-events-auto">
-      <p class="hover:opacity-50">
+      <p class=" text-link">
         Cart (
         <span data-ajax-cart-bind="item_count" class="header__cart-quantity">
           {{ cart.item_count }}

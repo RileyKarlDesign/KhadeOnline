@@ -12,6 +12,20 @@ if (window.liquidAjaxCart?.init) {
   document.addEventListener("liquid-ajax-cart:init", runWhenInit);
 }
 
+
+document.addEventListener('liquid-ajax-cart:request-end', event => {
+  const {requestState} = event.detail;
+
+  // If the "add to cart" request is successful
+  if (requestState.requestType === 'add' && requestState.responseData?.ok) {
+
+    // Add the CSS class to the "body" tag
+    openCart()
+  }
+});
+
+
+
 // JS Back 
 
 let backBtn = document.querySelector('.js-back');
@@ -89,9 +103,10 @@ menuBtn.forEach((btn) => {
 
 // Cart 
 
-  let cart = document.querySelector(".my-cart");
+  let cart = document.querySelector(".cart-wrap");
   let bodyWrap = document.querySelector(".js-main");
   let cartBtns = document.querySelectorAll(".cart-btn");
+  let cartClose = document.querySelector(".cart-close-btn"); 
   let cartBg = document.querySelector(".js-cart-bg");
   let cartState = false;
 
@@ -106,6 +121,7 @@ menuBtn.forEach((btn) => {
 
 
   let closeCart = () => {
+     console.log("close");
     cart.classList.remove("cart-open");
     bodyWrap.style.opacity = "1 ";
     cartState = false;
@@ -114,8 +130,10 @@ menuBtn.forEach((btn) => {
   };
 
   let openCart = () => {
-    cartBg.classList.add("js-cart-bg-active");
+    console.log('open')
     cart.classList.add("cart-open");
+    cartBg.classList.add("js-cart-bg-active");
+   
     cartBg.style.pointerEvents = "auto";
     bodyWrap.style.opacity = "0.5 ";
     cartState = true;
@@ -125,16 +143,24 @@ menuBtn.forEach((btn) => {
   cartBtns.forEach((i) => {
     i.addEventListener("mousedown", () => {
       if (cartState) {
+       
         closeCart();  
         
       } else {
+        
         openCart();
         closeMenu();
-  
-          
       }
     });
   });
+
+cartBg.addEventListener("click", (e) => {
+
+
+      closeCart();
+  
+  
+})
 
 
 // const swiper = new Swiper('.swiper', {
