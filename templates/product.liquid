@@ -1,9 +1,9 @@
-<div class="flex sm:flex-row flex-col">
-  <div class=" relative  flex sm:w-1/2 w-full md:pt-0 md:mt-0 mt-[60px]  md:h-screen h-[70vh] ">
+<div class="flex md:flex-row flex-col">
+  <div class=" relative  flex md:w-1/2 w-full md:pt-0 md:mt-0 mt-[60px]  md:h-screen h-[70vh] ">
     {% render 'swiper' with { product: product } %}
   </div>
 
-  <div class="  w-full md:w-1/2  md:flex justify-start items-start md:p-2 md:pt-[16px] p-2  h-fit md:h-screen ">
+  <div class="  w-full md:w-1/2  md:flex justify-start items-start md:p-2 md:pt-[16px] p-2  h-fit md:h-screen  ">
     <div class="  ALL INFO  w-full md:w-[250px]  ">
       <div class="js-back text-link mb-2 hover:opacity-30 cursor-pointer">
         <p class="pointer-events-none">Back</p>
@@ -23,10 +23,10 @@
         </ajax-cart-product-form>
         <div class="flex flex-col gap-1  ">
           <div class="js-product-description flex-col flex gap-0">
-            {% if product.metafields.custom.materials != '' %}
+            {% if product.metafields.custom.materials %}
               {% render 'accordian' with { title: 'Materials', content: product.metafields.custom.materials } %}
             {% endif %}
-            {% if product.metafields.custom.sizing != '' %}
+            {% if product.metafields.custom.sizing %}
               {% render 'accordian' with { title: 'Sizing', content: product.metafields.custom.size } %}
             {% endif %}
           </div>
