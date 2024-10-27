@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
 function runWhenInit() {
-  console.log("The current cart state is: ", window.liquidAjaxCart.cart);
+  // console.log("The current cart state is: ", window.liquidAjaxCart.cart);
 }
 
 if (window.liquidAjaxCart?.init) {
@@ -20,8 +20,8 @@ if (window.liquidAjaxCart?.init) {
    
       let elForm = document.querySelector(addToCartFormSelector);
       let selectedVariant = productForm.getActiveVariant(elForm);
-      console.log('form change');
-      console.log( selectedVariant );
+      // console.log('form change');
+      // console.log( selectedVariant );
      
 
       var formChangeEvent = new CustomEvent( "form:change", {
@@ -61,7 +61,7 @@ if (window.liquidAjaxCart?.init) {
         objectsArray.push(obj);
       });
 
-      console.log(objectsArray)
+      // console.log(objectsArray)
 
       objectsArray.forEach(function (item, index) {
         if (item.name.indexOf("option") !== -1) {
@@ -79,11 +79,11 @@ if (window.liquidAjaxCart?.init) {
           variant.option2 === decodeURIComponent(formOptions.option2)
           // variant.option3 === decodeURIComponent(formOptions.option3)
         ) {
-          console.log('matched variant')
+          // console.log('matched variant')
           selectedVariant = variant;
           selectedVariantMax = variant.inventory_quantity;
-          console.log(selectedVariant)
-          console.log(selectedVariantMax)
+          // console.log(selectedVariant)
+          // console.log(selectedVariantMax)
           return ; // Exiting the loop early since the variant is found
         }
 

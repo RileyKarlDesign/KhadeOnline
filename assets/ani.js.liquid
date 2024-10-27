@@ -1,4 +1,4 @@
-console.log('ani 1.O')
+
 
 // _______________
 
@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
   document.addEventListener("liquid-ajax-cart:request-end", function(event) {
   const {sections} = event.detail;
-  console.log("Sections are re-rendered: ", sections);
+  // console.log("Sections are re-rendered: ", sections);
 });
 
 let menuOpen = false
@@ -53,7 +53,7 @@ let stiches = elLogo.querySelectorAll('path');
 var mixedStiches = [];
 
 for(var i = 0, n; n = stiches[i]; ++i) mixedStiches.push(n);
-console.log(mixedStiches) 
+
 shuffle(mixedStiches)
 
 gsap.to(mixedStiches, {opacity:1, duration:0.002, x:0, stagger:0.002})
@@ -77,9 +77,9 @@ gsap.to(mixedStiches, {opacity:1, duration:0.002, x:0, stagger:0.002})
       closeMenu();
       gsap.to('.js-main', { opacity: 0, duration: .3 });
       gsap.to(mixedStiches, {opacity:0, duration:0.003, x:0, stagger:0.003})
-      console.log(e.target.href)
+
       setTimeout(() => {
-        console.log(e.target.href)
+
         window.location.href = e.target.href;
       }, 20) 
     })
@@ -150,7 +150,7 @@ gsap.to(mixedStiches, {opacity:1, duration:0.002, x:0, stagger:0.002})
   let Recs = document.querySelector('.recs-wrapper')
   let footer = document.querySelector('.js-footer')
   let footInView = false
-  console.log(Recs)
+
 
   // Observer for recs
 
@@ -162,7 +162,7 @@ gsap.to(mixedStiches, {opacity:1, duration:0.002, x:0, stagger:0.002})
         if (!footInView) {
           prodInfo.classList.add('info-shift-bottom')
           bgFade.classList.remove('bg-fade-active')
-          console.log('adding info shift bottomm')
+     
 
         }
 
@@ -185,10 +185,10 @@ gsap.to(mixedStiches, {opacity:1, duration:0.002, x:0, stagger:0.002})
 
       if (entry.isIntersecting) {
         footInView = true;
-        console.log(' ther is a foot in view ')
+  
       } else {
         footInView = false;
-        console.log('no foot in sight ')
+     
       }
 
     });

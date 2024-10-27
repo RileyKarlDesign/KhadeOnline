@@ -32,7 +32,7 @@ $(document).ready(function() {
           selectedVariantMax = null;
         
 
-          console.log(formData)
+          // console.log(formData)
 
           
 
@@ -51,8 +51,8 @@ $(document).ready(function() {
               }
           });
 
-          console.log(selectedVariant)
-          console.log(formOptions)
+          // console.log(selectedVariant)
+          // console.log(formOptions)
           return selectedVariant;
          
          
@@ -120,17 +120,17 @@ $(document).ready(function() {
         quantity.innerHTML = currentCount;
         quantity.innerHTML = currentCount;
         quantityHidden.value = currentCount;
-        console.log( quantityHidden )
+        // console.log( quantityHidden )
       }
 
-      console.log( currentCount )
+      // console.log( currentCount )
 
     }
 
 
     let reduce = () => {
 
-      console.log( currentCount )
+      // console.log( currentCount )
 
       let max = quantity.dataset.max;
 
@@ -141,7 +141,7 @@ $(document).ready(function() {
         quantity.innerHTML = currentCount;
         quantity.innerHTML = currentCount;
         quantityHidden.value = currentCount;
-        console.log( quantityHidden )
+        // console.log( quantityHidden )
       } 
 
     }
@@ -162,18 +162,18 @@ $(document).ready(function() {
 
     // accoridan 
 
-    console.log( 'accord' )
+   
 
     let a = document.querySelectorAll('.accordian-title')
 
-    console.log(a)
+
 
     a.forEach( (i) => {
         
      
        i.addEventListener('click', (i) => {
 
-        console.log( ' click ')
+  
         console.log( i.target.parentNode.classList )
 
         if( i.target.parentNode.classList.contains('accordian-open')){
