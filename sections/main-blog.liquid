@@ -1,5 +1,17 @@
-<div class="grid sm:grid-cols-2 grid-cols-1 gap-1 p-2 pt-40 ">
-  {% for article in blog.articles %}
-    {% render 'blog-card'with {article:article} %}
-  {% endfor %}
+<div class="">
+  <div class=" p-2 flex flex-col md:flex-row gap-1">
+    <div class="md:sticky md:top-2 pt-40 title h-fit subheader-title  ">
+      <p class="pt-[5px] md:border-t-[1px] md:border-stroke-1 w-full pb-2">
+        {{ blog.title }}
+      </p>
+    </div>
+
+    <div class="md:pt-40 pt-40 ">
+      <div class="  grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-1   pt-[9px] border-t-[1px] border-stroke-1">
+        {% for article in blog.articles %}
+          {% render 'blog-card'with {article:article} %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 </div>

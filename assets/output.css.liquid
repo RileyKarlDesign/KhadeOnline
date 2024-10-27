@@ -3181,7 +3181,7 @@ input[type=number] {
 .menu-card{
   border-radius:0;
   left: -100%;
-  opacity: 1;
+  opacity: 0;
   pointer-events:none;
   transition: ease all var(--transTime) ;
 }
@@ -3564,6 +3564,10 @@ label {
 }
 
 @media (min-width: 640px) {
+  .sm\:block {
+    display: block;
+  }
+
   .sm\:w-1\/2 {
     width: 50%;
   }
@@ -3675,6 +3679,10 @@ label {
     width: 100%;
   }
 
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -3711,11 +3719,6 @@ label {
     border-color: #796a59c6;
   }
 
-  .md\:border-surface-1 {
-    --tw-border-opacity: 1;
-    border-color: rgb(255 253 248 / var(--tw-border-opacity));
-  }
-
   .md\:p-0 {
     padding: 0px;
   }
@@ -3730,6 +3733,10 @@ label {
 
   .md\:p-\[0px\] {
     padding: 0px;
+  }
+
+  .md\:p-3 {
+    padding: 30px;
   }
 
   .md\:pb-4 {
@@ -3778,6 +3785,26 @@ label {
 
   .md\:pt-\[70px\] {
     padding-top: 70px;
+  }
+
+  .md\:pt-\[20px\] {
+    padding-top: 20px;
+  }
+
+  .md\:pt-\[18px\] {
+    padding-top: 18px;
+  }
+
+  .md\:pt-\[13px\] {
+    padding-top: 13px;
+  }
+
+  .md\:pt-\[16px\] {
+    padding-top: 16px;
+  }
+
+  .md\:pt-\[14px\] {
+    padding-top: 14px;
   }
 }
 
