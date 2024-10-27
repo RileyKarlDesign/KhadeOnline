@@ -50,9 +50,15 @@
         "image": "shopify://shop_images/463944507_1350862042966167_8348264001336003385_n.jpg",
         "color": ""
       }
+    },
+    "block_clear_space_H8dwNb": {
+      "type": "Block-clear-space",
+      "settings": {
+      }
     }
   },
   "order": [
+    "block_clear_space_H8dwNb",
     "product_display_jRGQ3r",
     "block_portrait_image_KfbcUp",
     "product_display_EXdn6f",
