@@ -2300,6 +2300,10 @@ video {
   padding-bottom: 10px;
 }
 
+.pb-\[3px\] {
+  padding-bottom: 3px;
+}
+
 .pb-\[5px\] {
   padding-bottom: 5px;
 }
@@ -3283,27 +3287,29 @@ input[type=number] {
 }
 
 @media only screen and (max-width: 768px) {
-  .my-cart{
+  .cart-wrap{
     position: fixed;
-    right: 0px;
-    top: 100%;
-    left: 0px;
+    right: 0;
+    left:  0;
+    top: 2rem;
     bottom: 0;
-    cursor: pointer;
-    width: calc( 100vw  );
+    pointer-events:none;
     height: calc(var(--winHeight) );
-    overflow: hidden;
-    /* transition: top 0.3s; */
     transition: ease all var(--transTime) ;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity all 0.1 ;
   }
 
   .cart-open{
-    width: calc( 100vw  );
-    height: calc(var(--winHeight) / 10 * 7  );
     overflow: scroll;
-    pointer-events: auto !important;
+    transition: ease all var(--transTime) ;
     right: 0px;
-    top:30%;
+    left: 0px;
+    top: 10px;
+    bottom: 0;
+    opacity: 1;
+    pointer-events:auto!important;
   }
 }
 
@@ -3612,6 +3618,10 @@ label {
     display: grid;
   }
 
+  .md\:hidden {
+    display: none;
+  }
+
   .md\:aspect-auto {
     aspect-ratio: auto;
   }
@@ -3677,6 +3687,10 @@ label {
     flex-direction: column;
   }
 
+  .md\:justify-normal {
+    justify-content: normal;
+  }
+
   .md\:gap-1 {
     gap: 15px;
   }
@@ -3695,6 +3709,11 @@ label {
 
   .md\:border-stroke-1 {
     border-color: #796a59c6;
+  }
+
+  .md\:border-surface-1 {
+    --tw-border-opacity: 1;
+    border-color: rgb(255 253 248 / var(--tw-border-opacity));
   }
 
   .md\:p-0 {

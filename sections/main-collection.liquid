@@ -1,6 +1,6 @@
 <div class="PRODUCT GALLERY">
   {% if collection.all_products_count > 0 %}
-    <div class=" flex p-2 gap-1">
+    <div class=" p-2 flex flex-col md:flex-row gap-1">
       <div class="md:sticky md:top-2 pt-40 title h-fit subheader-title  ">
         <p class="pt-[5px] md:border-t-[1px] md:border-stroke-1 w-full pb-2">
           {{ collection.title }}
@@ -19,7 +19,7 @@
       </div>
 
       <div class="md:pt-40 pt-40 ">
-        <div class="  grid grid-cols-3 gap-1   pt-[9px] border-t-[1px] border-stroke-1">
+        <div class="  grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-1   pt-[9px] border-t-[1px] border-stroke-1">
           {% for product in collection.products %}
             {% render 'product-card'  with {product: product,nofade: false } %}
           {% endfor %}

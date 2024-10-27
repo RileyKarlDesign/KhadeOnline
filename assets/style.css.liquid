@@ -395,8 +395,6 @@ opacity: 100;
   transition: opacity all 0.1 ;
 }
 
-
- 
 .cart-open{
 
   overflow: scroll;
@@ -413,32 +411,33 @@ opacity: 100;
 
 @media only screen and (max-width: 768px) {
 
-  .my-cart{
-    position: fixed;
-    right: 0px;
-    top: 100%;
-    left: 0px;
-    bottom: 0;
-    cursor: pointer;
-    width: calc( 100vw  );
-    height: calc(var(--winHeight) );
-    overflow: hidden;
-    /* transition: top 0.3s; */
-    transition: ease all var(--transTime) ;
-   
-  } 
+  .cart-wrap{
+  position: fixed;
+  right: 0;
+  left:  0;
+  top: 2rem;
+  bottom: 0;
+
+  pointer-events:none;
+  height: calc(var(--winHeight) );
+  transition: ease all var(--transTime) ;
+  overflow: hidden;
+  opacity: 0; 
+  transition: opacity all 0.1 ;
+}
 
     
-  .cart-open{
+.cart-open{
+  overflow: scroll;
+  transition: ease all var(--transTime) ;
+  right: 0px;
+  left: 0px;
+   top: 10px;
+  bottom: 0;
+  opacity: 1; 
+ pointer-events:auto!important;
 
-    width: calc( 100vw  );
-    height: calc(var(--winHeight) / 10 * 7  );
-    overflow: scroll;
-    pointer-events: auto !important;
-    right: 0px;
-    top:30%;
- 
-  }
+}
 }
 
 
