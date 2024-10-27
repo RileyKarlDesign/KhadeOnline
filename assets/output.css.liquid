@@ -1129,6 +1129,14 @@ video {
   height: 100vh;
 }
 
+.h-\[10px\] {
+  height: 10px;
+}
+
+.h-\[15px\] {
+  height: 15px;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -1276,6 +1284,18 @@ video {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-\[6px\] {
+  width: 6px;
+}
+
+.w-\[10px\] {
+  width: 10px;
+}
+
+.w-\[15px\] {
+  width: 15px;
 }
 
 .flex-shrink {
@@ -2894,7 +2914,7 @@ video {
   --winHeight: 100vh;
   --bgbg: rgba(30, 13, 2, 0.73);
   --bgbgnull: rgba(30, 13, 2, 0);
-  --bgBlur: 90px;
+  --bgBlur: 60px;
   --transTime: .4s;
 }
 
@@ -3196,13 +3216,10 @@ input[type=number] {
   overflow: scroll;
 }
 
-.dim .js-cart-bg {
+.js-cart-bg {
   /* opacity: .4 !important; */
   /* background-color: red !important; */
   transition: ease all var(--transTime) ;
-}
-
-.js-cart-bg  {
   /* opacity: .4 !important; */
   /* background-color: red !important; */
   background-color: var(--bgbgnull) !important;
@@ -3220,9 +3237,9 @@ input[type=number] {
 .cart-wrap{
   position: fixed;
   right: 0;
-  top: 100%;
+  top:8rem;
   bottom: 0;
-  cursor: pointer;
+  pointer-events:none;
   height: calc(var(--winHeight) );
   transition: ease all var(--transTime) ;
   overflow: hidden;
@@ -3234,9 +3251,10 @@ input[type=number] {
   overflow: scroll;
   transition: ease all var(--transTime) ;
   right: 0px;
-  top: 20%;
+  top: 10rem;
   bottom: 0;
   opacity: 1;
+  pointer-events:auto!important;
 }
 
 @media only screen and (max-width: 768px) {
@@ -3264,18 +3282,13 @@ input[type=number] {
   }
 }
 
-ajax-cart-product-form[processing]:before {
-  content: 'Updating';
-  padding: 20px;
-  background-color: red;
-  border-radius: 20px;
-  position: absolute;
-  top: 20px;
+ajax-cart-product-form[processing] .atcbtn{
+  opacity:.2
 }
 
 /* Make the "Add to cart" button look visually disabled while loading */
 
-ajax-cart-product-form[processing] [type="submit"] {
+ajax-cart-product-form[processing] [type="submit"] .atcbtn {
   opacity: .7;
   cursor: not-allowed;
   pointer-events: none;
