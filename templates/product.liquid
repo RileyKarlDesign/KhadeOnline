@@ -16,10 +16,6 @@
       <div class="">
         <div class="pb-[10px] pt-1 ">
           {{ product.description }}
-          {% if product.metafields.custom.pre_order -%}
-            ah
-            {% render 'preorder' with { content: product.metafields.custom.pre_order } %}
-          {% endif %}
         </div>
 
         <ajax-cart-product-form>
@@ -34,6 +30,10 @@
               {% render 'accordian' with { title: 'Sizing', content: product.metafields.custom.size } %}
             {% endif %}
           </div>
+
+          {% if product.metafields.custom.pre_order -%}
+            {% render 'preorder' with { content: product.metafields.custom.pre_order } %}
+          {% endif %}
 
           {% render 'atc-stick' %}
         </div>

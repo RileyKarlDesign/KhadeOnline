@@ -67,24 +67,24 @@ gsap.to(mixedStiches, {opacity:1, duration:0.002, x:0, stagger:0.002})
 
   // link dealy
 
-  // let links = document.querySelectorAll("a");
+  let translinks = document.querySelectorAll(".trans-link");
 
-  // for (let i = 0; i < links.length; i++) {
+  for (let i = 0; i < translinks.length; i++) {
 
 
-  //   links[i].addEventListener("click", (e) => {
-  //     e.preventDefault();
-  //     closeMenu();
-  //     gsap.to('.js-main', { opacity: 0, duration: .3 });
-  //     gsap.to(mixedStiches, {opacity:0, duration:0.003, x:0, stagger:0.003})
-  //     console.log(e.target.href)
-  //     setTimeout(() => {
-  //       console.log(e.target.href)
-  //       window.location.href = e.target.href;
-  //     }, 20) 
-  //   })
+    links[i].addEventListener("click", (e) => {
+      e.preventDefault();
+      closeMenu();
+      gsap.to('.js-main', { opacity: 0, duration: .3 });
+      gsap.to(mixedStiches, {opacity:0, duration:0.003, x:0, stagger:0.003})
+      console.log(e.target.href)
+      setTimeout(() => {
+        console.log(e.target.href)
+        window.location.href = e.target.href;
+      }, 20) 
+    })
 
-  // }
+  }
 
   // image-ani 
 

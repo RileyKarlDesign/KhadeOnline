@@ -5,24 +5,29 @@
   <div class="subheader-title border-t-[1px] border-surface-1 pt-[5px]">
     <p>Cart ({{ cart.item_count }})</p>
   </div>
+
   <div class="my-cart  " data-ajax-cart-section>
     <div class="my-cart__items w-[350px]" data-ajax-cart-section-scroll>
       <!-- Loop through cart items -->
-      {% for line_item in cart.items %}
-        {% assign line_item_index = forloop.index %}
-        {% render 'cart-card' with { product: line_item , index: line_item_index } %}
-      {% endfor %}
+      {% if cart.item_count > 0 %}
+        {% for line_item in cart.items %}
+          {% assign line_item_index = forloop.index %}
+          {% render 'cart-card' with { product: line_item , index: line_item_index } %}
+        {% endfor %}
 
-      <div class=" cart-footer flex gap-2 justify-center align-middle absolute left-0 right-0 bottom-2    "></div>
-      {% form 'cart', cart, id: 'my-ajax-cart-form' %}
-        <button
-          class=" px-20 flex w-full h-el justify-center items-center bg-black bg-opacity-80 text-white hover:bg-opacity-5 hover:text-black rounded-sm  backdrop-blur-lg "
-          type="submit"
-          name="checkout"
-        >
-          <h3>Checkout — {{ cart.total_price | money_with_currency }}</h3>
-        </button>
-      {% endform %}
+        <div class=" cart-footer flex gap-2 justify-center align-middle absolute left-0 right-0 bottom-2    "></div>
+        {% form 'cart', cart, id: 'my-ajax-cart-form' %}
+          <button
+            class=" px-20 flex w-full h-el justify-center items-center bg-black bg-opacity-80 text-white hover:bg-opacity-5 hover:text-black rounded-sm  backdrop-blur-lg "
+            type="submit"
+            name="checkout"
+          >
+            <h3>Checkout — {{ cart.total_price | money_with_currency }}</h3>
+          </button>
+        {% endform %}
+      {% else %}
+        <p class=" w-[350px] border-t-[1px] border-surface-1 pt-[5px]">Your cart is empty.</p>
+      {% endif %}
     </div>
   </div>
 

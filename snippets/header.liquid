@@ -14,7 +14,7 @@
           <div class="text-link flex justify-center items-center lg:h-full md:h-fit w-[40px] pointer-events-auto ">
             <h3 class=" select-none  ">
               <a
-                class="   {%- if request.path == link.url -%}f opacity-50 hover:opacity-50 {%- endif -%}"
+                class=" trans-link  {%- if request.path == link.url -%}f opacity-50 hover:opacity-50 {%- endif -%}"
                 href="{{ link.url }}"
               >
                 {{- link.title -}}

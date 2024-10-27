@@ -1,4 +1,4 @@
-<div class="flex  gap-1  relative  mb-[10px]  overflow-hidden border-text border-t-[1px] pt-[10px] surface-stroke-1">
+<div class="  flex  gap-[10px]  relative  mb-[10px]  overflow-hidden border-text border-t-[1px] pt-[5px] surface-stroke-1">
   {% comment %}  Image {% endcomment %}
   <a href="{{ product.url }}" class="w-28">
     <div class="featuredProductImage h-fit   overflow-hidden  ">
@@ -14,7 +14,7 @@
     </div>
   </a>
   {% comment %}  info start  {% endcomment %}
-  <div class=" flex flex-col justify-between w-full   ">
+  <div class=" flex flex-col  justify-between w-full     ">
     <div class="title">
       <p>{{ product.title }}</p>
 
@@ -31,7 +31,7 @@
           <!-- "Minus one" button -->
           <a
             data-ajax-cart-quantity-minus
-            class="   hover:text-stone-300 text-bold  pb-[2px]   flex justify-center items-center text-center rounded-full backdrop-blur-md "
+            class="   hover:black text-bold    flex justify-center items-center text-center rounded-full backdrop-blur-md "
             href="{{ routes.cart_change_url }}?line={{ line_item_index }}&quantity={{ line_item.quantity | minus: 1 }}"
           >
             -
@@ -50,7 +50,7 @@
           <!-- "Plus one" button -->
           <a
             data-ajax-cart-quantity-plus
-            class="  hover:text-stone-300 text-boldpb-[2px]   flex justify-center items-center text-center rounded-full backdrop-blur-md "
+            class="  hover:black text-bold   flex justify-center items-center text-center rounded-full backdrop-blur-md "
             href="{{ routes.cart_change_url }}?line={{ index }}&quantity={{ product.quantity | plus: 1 }}"
           >
             +

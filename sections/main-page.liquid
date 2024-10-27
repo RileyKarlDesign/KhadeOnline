@@ -3,7 +3,7 @@
 <div class="p-4 md:flex  gap-2 ">
   <div class=" w-full ">
     {%- for link in linklists['about-menu'].links -%}
-      <h3 class=" select-none ">
+      <h3 class=" trans-link select-none ">
         <a
           class=" hover:opacity-50 {%- if request.path == link.url -%}f opacity-50 hover:opacity-50 {%- endif -%}"
           href="{{ link.url }}"
