@@ -33,7 +33,7 @@ module.exports = {
         'base': '423.875px',
       },
       spacing: {
-        '1': '15px',
+        '1': '13px',
         '2': '25px',
         '3': '30px',
         '4': '40px',
@@ -54,7 +54,7 @@ module.exports = {
       },
 
       height: {
-        'el': '30px',
+        'el': '40px',
         'header-1': '50px'
       },
 

@@ -1,7 +1,7 @@
 <div
   class="
-    lg:h-[130vh] js-section relative lg:flex  {% if section.settings.reverse %} lg:flex-row-reverse {% endif %}  pointer-events-none   bg-opacity-50
-    md:h-[70vh] md:flex md:flex-row
+    lg:h-[130vh] js-section relative lg:flex  {% if section.settings.reverse %} md:flex-row-reverse {% endif %}  pointer-events-none flex-row-reverse  bg-opacity-50
+    md:h-[120vh] md:flex md:flex-row
     sm:flex-col
     h-fit
   "
@@ -11,11 +11,11 @@
       class="
         SMALL IMAGE
         lg:h-[100vh]
-        md:h-[70vh]  md:pt-2 p-2
-        pt-0  flex items-center justify-center sticky top-0
+        md:h-[80vh]  md:pt-2 p-2
+        pt-0  flex flex-col items-center justify-center sticky top-0 h-[70vh]
       "
     >
-      <div class="w-80  overflow-hidden md:p-[0px] md:pr-4  p-2">
+      <div class="w-80  overflow-hidden md:p-[0px] md:pr-4  p-4">
         <a href="{{ section.settings.product_1.url }}" class="pointer-events-auto">
           {{
             section.settings.image2
@@ -23,14 +23,14 @@
             | image_tag: class: ' object-cover  js-fade  pointer-events-none md:h-full '
           }}
         </a>
-      </div>
 
-      {% if section.settings.product_1 != '' %}
-        <div class="absolute bottom-4 left-2 ">
-          <p>{{ section.settings.product_1.title }}</p>
-          <p>{{ section.settings.product_1.price | money }}</p>
-        </div>
-      {% endif %}
+        {% if section.settings.product_1 != '' %}
+          <div class="md:absolute md:bottom-4 md:left-2 w-full  mt-1  ">
+            <p>{{ section.settings.product_1.title }}</p>
+            <p>{{ section.settings.product_1.price | money }}</p>
+          </div>
+        {% endif %}
+      </div>
     </div>
   </div>
 
