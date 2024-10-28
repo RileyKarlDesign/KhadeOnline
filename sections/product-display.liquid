@@ -26,8 +26,10 @@
 
         {% if section.settings.product_1 != '' %}
           <div class="md:absolute md:bottom-4 md:left-2 w-fit  mt-1  ">
-            <p>{{ section.settings.product_1.title }}</p>
-            <p>{{ section.settings.product_1.price | money }}</p>
+            <a href="{{ section.settings.product_1.url }}" class="pointer-events-auto">
+              <p>{{ section.settings.product_1.title }}</p>
+              <p>{{ section.settings.product_1.price | money }}</p>
+            </a>
           </div>
         {% endif %}
       </div>
