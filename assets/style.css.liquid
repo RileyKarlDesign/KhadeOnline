@@ -6,13 +6,13 @@
 
 
 @font-face {
-  font-family: SangBlu;
-  src: url(./SangBleuOGSerif-LightItalic-WebTrial.woff);
+  font-family:Berlingske;
+  src: url(./serif.otf);
 }
 
 @font-face {
-  font-family: Press;
-  src: url(./GT-Pressura-Mono-Text-Trial.woff2); 
+  font-family: mono;
+  src: url(./mono.otf); 
 }
 
 
@@ -42,14 +42,14 @@
 }
 
 h1 { 
-  font-family: 'SangBlu', serif ; 
+  font-family: 'Berlingske', serif ; 
 	line-height: 2rem;
 	font-size: 2rem; 
   letter-spacing: 0px;
 } 
 
  h2 { 
-  font-family: 'SangBlu', serif ; 
+  font-family: 'Berlingske', serif ; 
 	line-height: 1.5rem;
 	font-size: 1.4rem; 
   letter-spacing: 0px;
@@ -59,7 +59,7 @@ h1 {
 h3, button, input , p, span, label { 
   line-height: 1.1rem ;
   font-size: 0.85rem ;
-  font-family: 'Press', Times, serif  !important; 
+  font-family: 'mono', Times, serif  !important; 
  }
 
  input{
@@ -70,14 +70,14 @@ h3, button, input , p, span, label {
 
  @media (max-width: 767px) {
 h1 { 
-  font-family: 'SangBlu', serif ; 
+  font-family: 'Berlingske', serif ; 
 	line-height: 2rem;
 	font-size: 1.7rem; 
   letter-spacing: 0px;
 } 
 
  h2 { 
-  font-family: 'SangBlu', serif ; 
+  font-family: 'Berlingske', serif ; 
 	line-height: 1.5rem;
 	font-size: 1.4rem;  
   letter-spacing: 0px;
@@ -653,4 +653,49 @@ input[type=radio]{
 .blog-content img{
   width: 100%;
   padding: 20px 0;
+}
+
+/*  Cookies  */
+
+
+shopify-pc__banner__dialog {
+    /* color: red; */
+    position: fixed;
+    z-index: 2000000;
+    /* box-shadow: 0px 4px 10px rgb(63 63 68 / 40%); */
+    max-height: 90%;
+    box-sizing: border-box;
+    opacity: 1;
+    padding: 20px;
+    background-color: hsl(0deg 9.76% 31.87%);
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    border: none;
+    text-align: left;
+    bottom: 0;
+    left: 25%;
+    width: 50%;
+    min-width: 280px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+
+
+
+.shopify-pc__banner__dialog h2 {
+    color: hsl(40deg 100% 98.82%);
+    font-family: inherit;
+    font-size: 29px;
+    margin: 0 0 .5em 0;
+    padding: 0;
+    font-weight: bold;
+    display: none !important;
+}
+
+.shopify-pc__banner__dialog button.shopify-pc__banner__btn-accept {
+    border: 1px solid hsl(0deg, 0%, 12%, 100%);
+    background: #1c140e !important;
+    color: ##fffdf8 !important; 
 }
