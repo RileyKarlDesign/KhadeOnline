@@ -24,7 +24,7 @@ module.exports = {
         'type-2': "#403128",
         'btn-1': "#1c140e",
         'btn-2': "#554030",
-        'preorder': "#c81c69ff",
+        'preorder': "#403128",
         'lowstock': "#a01d40ad",
         'stroke-1': "#796a59c6",
         'stroke-2': "#403128",
