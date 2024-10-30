@@ -3228,8 +3228,8 @@ input[type=number] {
 
 .menu-open{
   background-color: var(--bgbg) !important;
-  -webkit-backdrop-filter:var(--bgBlur)!important;
-          backdrop-filter:var(--bgBlur)!important;
+  -webkit-backdrop-filter: blur(var(--bgBlur))!important;
+          backdrop-filter: blur(var(--bgBlur))!important;
   transition: ease all var(--transTime);
   pointer-events: all !important;
 }
@@ -3527,7 +3527,9 @@ shopify-pc__banner__dialog {
   box-sizing: border-box;
   opacity: 1;
   padding: 20px;
-  background-color: hsl(0deg 9.76% 31.87%) !important;
+  background-color:var(--bgbg) !important;
+  -webkit-backdrop-filter:blur(var(--bgBlur)) !important;
+          backdrop-filter:blur(var(--bgBlur)) !important;
   overflow: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
