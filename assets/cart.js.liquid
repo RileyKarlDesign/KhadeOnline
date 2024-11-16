@@ -1,30 +1,30 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-function runWhenInit() {
-  // console.log("The current cart state is: ", window.liquidAjaxCart.cart);
-}
+  function runWhenInit() {
+    // console.log("The current cart state is: ", window.liquidAjaxCart.cart);
+  }
 
-if (window.liquidAjaxCart?.init) {
-  // if Liquid Ajax Cart is already initialized
-  runWhenInit();
-} else {
-  // wait for Liquid Ajax Cart to be initialized
-  document.addEventListener("liquid-ajax-cart:init", runWhenInit);
-}
+  if (window.liquidAjaxCart?.init) {
+    // if Liquid Ajax Cart is already initialized
+    runWhenInit();
+  } else {
+    // wait for Liquid Ajax Cart to be initialized
+    document.addEventListener("liquid-ajax-cart:init", runWhenInit);
+  }
 
   let addToCartFormSelector = "#add-to-cart-form",
     productOptionsSelector = addToCartFormSelector + " [name*=option]";
 
   let productForm = {
     onProductOptionChanged: function (event) {
-   
+
       let elForm = document.querySelector(addToCartFormSelector);
       let selectedVariant = productForm.getActiveVariant(elForm);
-      // console.log('form change');
-      // console.log( selectedVariant );
-     
 
-      var formChangeEvent = new CustomEvent( "form:change", {
+      console.log('form change');
+      // console.log( selectedVariant );
+
+      var formChangeEvent = new CustomEvent("form:change", {
         detail: selectedVariant,
       });
       elForm.dispatchEvent(formChangeEvent);
@@ -33,8 +33,10 @@ if (window.liquidAjaxCart?.init) {
     getActiveVariant: function (elForm, newForm) {
       let formEl = document.querySelector("#add-to-cart-form");
       let variants = JSON.parse(decodeURIComponent(formEl.dataset.variants));
-      
+
       // formInlineData = elForm.serializeArray(); // removed j query
+
+
 
       (formInlineData = new URLSearchParams(
         Array.from(new FormData(formEl))
@@ -49,7 +51,7 @@ if (window.liquidAjaxCart?.init) {
 
       // Initialize an empty array to store objects
       let objectsArray = [];
-     
+
       let keyValuePairs = formInlineData.split("&");
       // Iterate over the key-value pairs and create objects
       keyValuePairs.forEach((pair) => {
@@ -61,7 +63,7 @@ if (window.liquidAjaxCart?.init) {
         objectsArray.push(obj);
       });
 
-      // console.log(objectsArray)
+
 
       objectsArray.forEach(function (item, index) {
         if (item.name.indexOf("option") !== -1) {
@@ -71,39 +73,71 @@ if (window.liquidAjaxCart?.init) {
 
       let decodedFormOptions = decodeURIComponent(formOptions);
 
+
+
       variants.forEach(function (variant) {
 
-      
-        if (
-          variant.option1 === decodeURIComponent(formOptions.option1) &&
-          variant.option2 === decodeURIComponent(formOptions.option2)
-          // variant.option3 === decodeURIComponent(formOptions.option3)
-        ) {
-          // console.log('matched variant')
-          selectedVariant = variant;
-          selectedVariantMax = variant.inventory_quantity;
-          // console.log(selectedVariant)
-          // console.log(selectedVariantMax)
-          return ; // Exiting the loop early since the variant is found
+        console.log(variant.option2)
+
+        console.log(`option1: ${decodeURIComponent(formOptions.option1)}`)
+        console.log(`option2: ${decodeURIComponent(formOptions.option2)}`)
+
+        // if variant 2 exsists then match both otherwise match 1
+
+
+
+        if (variant.option1 != null && variant.option2 != null) {
+          if (
+            variant.option1 === decodeURIComponent(formOptions.option1) &&
+            variant.option2 === decodeURIComponent(formOptions.option2)
+            // variant.option3 === decodeURIComponent(formOptions.option3)
+          ) {
+            console.log('matched variant')
+            selectedVariant = variant;
+            selectedVariantMax = variant.inventory_quantity;
+            console.log('Selected Variant: ' + { selectedVariant })
+            console.log(selectedVariantMax)
+            return; // Exiting the loop early since the variant is found
+          }
+
+        }
+        else if (variant.option1 != null) {
+
+          if (
+            variant.option1 === decodeURIComponent(formOptions.option1)
+
+          ) {
+            console.log('matched variant')
+            selectedVariant = variant;
+            selectedVariantMax = variant.inventory_quantity;
+            console.log('Selected Variant: ' + { selectedVariant })
+            console.log(selectedVariantMax)
+            return; // Exiting the loop early since the variant is found
+          }
+
         }
 
 
+
+
+
+
       });
-       
+
 
       return selectedVariant;
     },
 
     validate: function (event) {
-      
+
       let elForm = this;
       (selectedVariant = productForm.getActiveVariant(elForm)),
         (hasVariant = selectedVariant !== null),
         (canAddToCart = hasVariant && selectedVariant.inventory_quantity > 0),
         ($id = document.querySelector(".js-variant-id")),
         ($quantity = document.querySelector(".js-quantity-total")),
-        ($addToCartButton = document.querySelector("#add-to-cart-button")),
-        ($maxQuantity = selectedVariant.inventory_quantity);
+        ($addToCartButton = document.querySelector("#add-to-cart-button"));
+      ($maxQuantity = selectedVariant.inventory_quantity);
 
       if (canAddToCart) {
         $id.value = selectedVariant.id;
@@ -119,14 +153,14 @@ if (window.liquidAjaxCart?.init) {
         // $addToCartButton.style.display = 'none';
         $addToCartButton.style.opacity = .5;
         $addToCartButton.style.pointerEvents = 'none';
-        
+
       }
     },
 
     init: function () {
       document.addEventListener("change", productForm.onProductOptionChanged);
       document.addEventListener("change", function (event) {
-      productForm.validate(event);
+        productForm.validate(event);
       });
     },
   };
@@ -149,7 +183,7 @@ if (window.liquidAjaxCart?.init) {
       quantity.innerHTML = currentCount;
       quantity.innerHTML = currentCount;
       quantityHidden.value = currentCount;
-    
+
     }
   };
 
@@ -181,7 +215,7 @@ if (window.liquidAjaxCart?.init) {
 
 
 
- 
+
 });
 
 
@@ -191,12 +225,12 @@ document.addEventListener("liquid-ajax-cart:request-end", (event) => {
   // If the "add to cart" request is successful
   if (requestState.requestType === "add" && requestState.responseData?.ok) {
     // Add the CSS class to the "body" tag
-   
+
   }
 });
 
 document.addEventListener("DOMContentLoaded", function () {
- 
+
 });
 
 // btn
