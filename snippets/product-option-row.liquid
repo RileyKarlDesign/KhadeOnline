@@ -63,9 +63,7 @@
                   {% if forloop.index == 1 and variant.inventory_quantity > 0 %}
                     checked="checked"
                   {% endif %}
-                  {% if variant.inventory_quantity <= 0 %}
-                    disabled
-                  {% endif %}
+
                   type="radio"
                   id="{{radio_id}}"
                   name="{{ option_name }}"
