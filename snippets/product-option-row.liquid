@@ -1,7 +1,7 @@
 <!-- option -->
 
 <div class="product-option-row product-option-row-option grid  grid-cols-2 mb-[5px]  ">
-  <label class="  flex items-center" for="{% if type == 'select' %}select-{{ option.name}}{% endif %}">
+  <label class="  flex items-center">
     <p>{{ option.name }}</p>
   </label>
 
@@ -38,6 +38,7 @@
               >
               <label for="{{radio_id}}" class="px-[3px]">
                 {{ value }}
+                {{ radio_id }}
               </label>
             </div>
 
