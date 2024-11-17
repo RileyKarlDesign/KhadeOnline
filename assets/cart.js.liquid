@@ -16,13 +16,16 @@ document.addEventListener("DOMContentLoaded", function () {
     productOptionsSelector = addToCartFormSelector + " [name*=option]";
 
   let productForm = {
+
+
+
     onProductOptionChanged: function (event) {
 
       let elForm = document.querySelector(addToCartFormSelector);
       let selectedVariant = productForm.getActiveVariant(elForm);
 
-      console.log('form change');
-      // console.log( selectedVariant );
+
+
 
       var formChangeEvent = new CustomEvent("form:change", {
         detail: selectedVariant,
@@ -30,7 +33,10 @@ document.addEventListener("DOMContentLoaded", function () {
       elForm.dispatchEvent(formChangeEvent);
     },
 
+
+
     getActiveVariant: function (elForm, newForm) {
+
       let formEl = document.querySelector("#add-to-cart-form");
       let variants = JSON.parse(decodeURIComponent(formEl.dataset.variants));
 
@@ -74,30 +80,49 @@ document.addEventListener("DOMContentLoaded", function () {
       let decodedFormOptions = decodeURIComponent(formOptions);
 
 
+      console.log(`option1: ${decodeURIComponent(formOptions.option1)}`)
+      console.log(`option2: ${decodeURIComponent(formOptions.option2)}`)
+
+
+
+
+
 
       variants.forEach(function (variant) {
 
-        console.log(variant.option2)
 
-        console.log(`option1: ${decodeURIComponent(formOptions.option1)}`)
-        console.log(`option2: ${decodeURIComponent(formOptions.option2)}`)
+
 
         // if variant 2 exsists then match both otherwise match 1
 
-
-
         if (variant.option1 != null && variant.option2 != null) {
+
+
+          let op1 = (decodeURIComponent(formOptions.option1).split('+'))
+          let op2 = (decodeURIComponent(formOptions.option2).split('+'))
+
+
+          console.log(variant.options[0] + '==' + op1[0])
+          console.log(variant.options[1] + '==' + op1[2])
+
+
+
           if (
-            variant.option1 === decodeURIComponent(formOptions.option1) &&
-            variant.option2 === decodeURIComponent(formOptions.option2)
+            variant.options[0] === op1[0] &&
+            variant.options[1] === op2[2]
             // variant.option3 === decodeURIComponent(formOptions.option3)
           ) {
             console.log('matched variant')
             selectedVariant = variant;
             selectedVariantMax = variant.inventory_quantity;
+
             console.log('Selected Variant: ' + { selectedVariant })
             console.log(selectedVariantMax)
+
             return; // Exiting the loop early since the variant is found
+          } else {
+
+            console.log('no match')
           }
 
         }
@@ -128,16 +153,97 @@ document.addEventListener("DOMContentLoaded", function () {
       return selectedVariant;
     },
 
+    updateMultiOptions: function (event) {
+
+
+
+      console.log('selected' + selectedVariant)
+
+      let form = document.querySelector("#add-to-cart-form");
+      let options = document.querySelectorAll('.variant-radio')
+
+      // get option one radios
+
+      let optionOne = document.querySelectorAll('.js-option-one ');
+
+      // set option one
+
+      let optionOneValue
+
+
+      let optionOneSelected = Array.from(optionOne).find(e => e.checked);
+      if (optionOneSelected) {
+        optionOneValue = optionOneSelected.value;
+      }
+
+      // form.style.border = 'red 1px solid';
+
+      // apply option one as a data attr to the inupt
+
+      options.forEach((option) => {
+
+        if (option.dataset.variant) {
+          let optionDets = option.dataset.variant;
+          let splitVar = optionDets.split(/(\s+)/);
+
+          option.setAttribute('data-option-one', splitVar[0])
+
+        }
+
+
+        if (option.dataset.inventory) {
+          if (option.dataset.optionOne == optionOneValue) {
+
+
+            if (option.dataset.inventory == 0) {
+
+              option.disabled = true;
+              option.hidden = false;
+
+            } else {
+
+              option.disabled = false;
+              option.hidden = false;
+            }
+          } else {
+
+
+            option.disabled = true;
+            option.hidden = true;
+            option.checked = false
+
+          }
+        }
+
+      });
+
+      // if options are not available then hide the radio
+
+
+
+
+    },
+
     validate: function (event) {
 
+
+      console.log('validation')
+
       let elForm = this;
+
+
+
+
       (selectedVariant = productForm.getActiveVariant(elForm)),
         (hasVariant = selectedVariant !== null),
         (canAddToCart = hasVariant && selectedVariant.inventory_quantity > 0),
         ($id = document.querySelector(".js-variant-id")),
         ($quantity = document.querySelector(".js-quantity-total")),
         ($addToCartButton = document.querySelector("#add-to-cart-button"));
-      ($maxQuantity = selectedVariant.inventory_quantity);
+      if (selectedVariant) {
+        $maxQuantity = selectedVariant.inventory_quantity;
+      }
+
 
       if (canAddToCart) {
         $id.value = selectedVariant.id;
@@ -158,10 +264,14 @@ document.addEventListener("DOMContentLoaded", function () {
     },
 
     init: function () {
+      productForm.validate(event)
+      productForm.updateMultiOptions();
       document.addEventListener("change", productForm.onProductOptionChanged);
       document.addEventListener("change", function (event) {
         productForm.validate(event);
+        productForm.updateMultiOptions();
       });
+
     },
   };
 

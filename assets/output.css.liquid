@@ -2262,6 +2262,11 @@ video {
   padding-bottom: 2rem;
 }
 
+.px-\[6px\] {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
 .pb-0 {
   padding-bottom: 0px;
 }
@@ -3419,6 +3424,8 @@ html.js-ajax-cart-processing .my-cart__items:before {
   max-width: none !important;
 }
 
+a
+
 .cm__btn .span{
   text-transform: capitalize !important;
 }
@@ -3486,6 +3493,23 @@ canvas[resize] {
 
 input[type=radio]{
   display: none;
+}
+
+label:has(input[hidden]) {
+  display: none;
+}
+
+label:has(input[disabled]) {
+  opacity: 0.3;
+}
+
+label:has(input:checked){
+  background-color: rgba(80, 61, 42, 0.09);
+  border-radius: 2px;
+}
+
+input[type=radio]:hidden + label {
+  /* display: none; */
 }
 
 label {
