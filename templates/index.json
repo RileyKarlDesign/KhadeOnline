@@ -33,9 +33,9 @@
     "product_display_EXdn6f": {
       "type": "product-display",
       "settings": {
-        "image1": "shopify://shop_images/DSC03328.jpg",
-        "image2": "shopify://shop_images/DSC03315_706af4a9-30a6-412a-8997-49aa345d84fb.jpg",
-        "product_1": "prouduct-one-copy",
+        "image1": "shopify://shop_images/IMG_4551.heic",
+        "image2": "shopify://shop_images/IMG_4559.heic",
+        "product_1": "prouduct-four",
         "reverse": false
       }
     },
