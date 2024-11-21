@@ -11,8 +11,7 @@
   "sections": {
     "block_clear_space_H8dwNb": {
       "type": "Block-clear-space",
-      "settings": {
-      }
+      "settings": {}
     },
     "product_display_jRGQ3r": {
       "type": "product-display",
@@ -27,7 +26,7 @@
     "block_portrait_image_KfbcUp": {
       "type": "Block-portrait-Image",
       "settings": {
-        "image": "shopify://shop_images/IMG_2263.heic",
+        "image": "shopify://shop_images/edit46.jpg",
         "color": ""
       }
     },
