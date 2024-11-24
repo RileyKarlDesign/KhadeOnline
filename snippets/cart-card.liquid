@@ -1,7 +1,7 @@
-<div class="  flex  gap-1  relative  mb-1  overflow-hidden border-text border-t-[1px] pt-1 surface-stroke-1">
+<div class="  flex  gap-1  relative  mb-1  overflow-hidden border-text border-t-[1px]  surface-stroke-1">
   {% comment %}  Image {% endcomment %}
   <a href="{{ product.url }}" class="w-28">
-    <div class="featuredProductImage h-fit   overflow-hidden  ">
+    <div class="featuredProductImage h-fit pt-[10px]  overflow-hidden  ">
       {{ product.image | image_url: width: 700 | image_tag }}
     </div>
 
@@ -15,7 +15,7 @@
   </a>
   {% comment %}  info start  {% endcomment %}
   <div class=" flex flex-col  justify-between w-full     ">
-    <div class="title">
+    <div class="title pt-[7px]">
       <p>{{ product.title }}</p>
 
       {% for e in product.variants %}
@@ -58,8 +58,8 @@
         </div>
         <!-- "Remove item" button -->
         <a class=" leading-none " data-ajax-cart-request-button href="{{ product.url_to_remove }}">
-          <div class="  bg-opacity-50  rounded-full  backdrop-blur-lg  absolute top-[5px] right-[2px] flex  justify-center items-center ">
-            <p class="text-[30px] leading-none  ">˟</p>
+          <div class="  bg-opacity-50  rounded-full  backdrop-blur-lg  absolute top-[8px] right-[2px] flex  justify-center items-center ">
+            <p class="leading-none">x</p>
           </div>
         </a>
       </ajax-cart-quantity>
