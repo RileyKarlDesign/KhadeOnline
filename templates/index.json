@@ -33,8 +33,8 @@
     "product_display_EXdn6f": {
       "type": "product-display",
       "settings": {
-        "image1": "shopify://shop_images/IMG_4551.heic",
-        "image2": "shopify://shop_images/IMG_4559.heic",
+        "image1": "shopify://shop_images/light.jpg",
+        "image2": "shopify://shop_images/ahanna1.jpg",
         "product_1": "prouduct-four",
         "reverse": false
       }
