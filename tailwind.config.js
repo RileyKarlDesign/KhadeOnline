@@ -56,7 +56,7 @@ module.exports = {
       },
 
       height: {
-        'el': '40px',
+        'el': '35px',
         'header-1': '50px'
       },
 
