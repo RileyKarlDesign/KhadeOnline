@@ -5,11 +5,8 @@
 <div class="my-cart bg-surface-2  z-[2000]  backdrop-blur-lg relative md:w-[50vw] sm:w-full w-full ">
   <div class=" header md:h-16 h-1 select-none absolute top-0 right-0 left-0 flex w-full z-50  justify-between items-end md:p-2 p-1 ">
     <h3>
-      Cart (
-      <span data-ajax-cart-bind="item_count" class="header__cart-quantity">
-        {{ cart.item_count }}
-      </span>
-      )
+      {% comment %} Cart(<span data-ajax-cart-bind="item_count" class="header__cart-quantity"> {{ cart.item_count }}</span>) {% endcomment %}
+      Your Cart
     </h3>
 
     <p>v1</p>
