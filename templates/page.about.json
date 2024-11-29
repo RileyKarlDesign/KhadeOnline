@@ -11,13 +11,12 @@
   "sections": {
     "main": {
       "type": "main-about",
-      "settings": {
-      }
+      "settings": {}
     },
     "image_and_text_MApG9i": {
       "type": "image-and-text",
       "settings": {
-        "image": "shopify://shop_images/461258136_1515807242410837_6687408993361354455_n.jpg",
+        "image": "shopify://shop_images/IMG_5672_2.heic",
         "title": "Starting From Scratch",
         "subtitle": "About Us",
         "body": "Khade is an independent brand guided by the philosophy of starting from scratch. Specialising in technical knitwear and soft furnishings, our collections find harmony in softness and structure. Khade supports transparent practices, with a deep connection to heritage and nature. Every piece is designed and crafted in the North East of England."
@@ -26,8 +25,7 @@
     "form": {
       "type": "contact-form",
       "disabled": true,
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [
