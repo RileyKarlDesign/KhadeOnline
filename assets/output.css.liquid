@@ -2607,10 +2607,6 @@ video {
   line-height: 1rem;
 }
 
-.text-\[18px\] {
-  font-size: 18px;
-}
-
 .font-bold {
   font-weight: 700;
 }
@@ -2625,6 +2621,10 @@ video {
 
 .capitalize {
   text-transform: capitalize;
+}
+
+.italic {
+  font-style: italic;
 }
 
 .leading-\[0px\] {
@@ -2948,11 +2948,10 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@font-face {
+/* @font-face {
   font-family:Berlingske;
-
   src: url(./serif.otf);
-}
+} */
 
 @font-face {
   font-family: mono;
@@ -2985,15 +2984,22 @@ video {
 }
 
 h1 {
-  font-family: 'Berlingske', serif ;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-style: italic;
   line-height: 2rem;
   font-size: 2rem;
   letter-spacing: 0px;
 }
 
 h2 {
-  font-family: 'Berlingske', serif ;
-  line-height: 1.5rem;
+  /* font-family: 'Berlingske', serif ; 
+	line-height: 1.5rem;
+	font-size: 1.4rem; 
+  letter-spacing: 0px; */
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-style: italic;
   font-size: 1.4rem;
   letter-spacing: 0px;
 }
@@ -3171,6 +3177,66 @@ input[type=number] {
 
 .shopify-pc__banner{
   display:none !important;
+}
+
+.cormorant-garamond-light {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.cormorant-garamond-regular {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cormorant-garamond-medium {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.cormorant-garamond-semibold {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.cormorant-garamond-bold {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.cormorant-garamond-light-italic {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.cormorant-garamond-regular-italic {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.cormorant-garamond-medium-italic {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.cormorant-garamond-semibold-italic {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.cormorant-garamond-bold-italic {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  font-style: italic;
 }
 
 @keyframes mymove {
