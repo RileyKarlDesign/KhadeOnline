@@ -33,9 +33,9 @@
     "product_display_EXdn6f": {
       "type": "product-display",
       "settings": {
-        "image1": "shopify://shop_images/light.jpg",
-        "image2": "shopify://shop_images/ahanna1.jpg",
-        "product_1": "ahanna-dress",
+        "image1": "shopify://shop_images/IMG_2673.heic",
+        "image2": "shopify://shop_images/chaddishorts.jpg",
+        "product_1": "chaddi-shorts",
         "reverse": false
       }
     },
